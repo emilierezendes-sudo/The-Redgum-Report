@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Journal &middot; The Redgum Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { margin: 0; background: #f7f0dd; }
+  a { color: #8a4526; text-decoration: none; }
+  a:hover { color: #6a3419; text-decoration: underline; }
+  ::selection { background: rgba(193,101,47,0.25); }
+  .rr-dropdown:hover .rr-dropdown-panel { display: flex !important; }
+  .rr-dropdown-panel a:hover { background: #efe4c9; text-decoration: none; }
+  .rr-photo-placeholder {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background: rgba(34,31,27,0.05); border: 1.5px dashed rgba(34,31,27,0.3);
+    color: rgba(34,31,27,0.55); font-size: 12px; padding: 12px; box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+<div style="font-family: 'Lora', Georgia, serif; color: #221f1b; background: #f7f0dd; min-height: 100vh;">
+
+  <nav class="rr-nav" style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 28px; padding: 14px 48px; background: rgba(247,240,221,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(34,31,27,0.14);">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #221f1b;">
+      <img src="uploads/redgum-report-logo.png" alt="The Redgum Report" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+      <span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; letter-spacing: 0.01em;">The Redgum Report</span>
+    </a>
+    <div class="rr-navlinks" style="display: flex; align-items: center; gap: 24px; margin-left: auto; font-size: 14px;">
+      <a href="index.html#about" style="color: #221f1b;">About</a>
+      <a href="newsletter-post.html" style="color: #221f1b;">Newsletter</a>
+      <a href="book-review.html" style="color: #221f1b;">Book Reviews</a>
+      <a href="photo-journal.html" style="color: #8a4526;">Photo Journal</a>
+    </div>
+  </nav>
+
+  <header class="rr-header" style="max-width: 1180px; margin: 0 auto; padding: 72px 48px 24px;">
+    <a href="index.html#about" style="font-size: 13px; color: rgba(34,31,27,0.6);">&larr; Back to About</a>
+    <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin: 24px 0 14px;">Photo Journal</div>
+    <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 46px; line-height: 1.1; margin: 0 0 18px;">Whatever the Camera Caught</h1>
+    <p style="font-size: 17px; line-height: 1.7; max-width: 560px; color: rgba(34,31,27,0.75); margin: 0;">A running, mostly-unedited record &mdash; the garden, the dog, the light through the kitchen window, and everything else worth pointing a camera at.</p>
+  </header>
+
+  <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 32px 48px 100px;">
+    <div class="rr-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <figure class="rr-span2" style="margin: 0; grid-column: span 2; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16/10;">
+          <img src="uploads/photo-journal-1.webp" alt="Bouncing down the mountain at sunset" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Bouncing down the mountain at sunset</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-2.webp" alt="Corduroy in Yosemite" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Corduroy in Yosemite</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-3.webp" alt="Flowers :)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Flowers :)</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-4.webp" alt="More flowers :)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">More flowers :)</figcaption>
+      </figure>
+      <figure class="rr-span2" style="margin: 0; grid-column: span 2; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16/10;">
+          <img src="uploads/photo-journal-5.webp" alt="Grapevine lake, at sunset" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Grapevine lake, at sunset</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-6.webp" alt="Me, on a walk" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Me, on a walk</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-7.webp" alt="O beautiful America" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">O beautiful America</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-8.webp" alt="Cailie and I, ain't she cute?!" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Cailie and I, ain't she cute?!</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-9.webp" alt="Houston skyline" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Houston skyline</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="rr-footer" style="border-top: 1px solid rgba(34,31,27,0.14); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div style="font-size: 13px; color: rgba(34,31,27,0.6);">&copy; 2026 The Redgum Report &middot; Made with too much tea and one loud dog</div>
+    <div style="display: flex; gap: 20px; font-size: 13px;">
+      <a href="index.html#about" style="color: #221f1b;">About</a>
+      <a href="newsletter-post.html" style="color: #221f1b;">Newsletter</a>
+      <a href="book-review.html" style="color: #221f1b;">Book Reviews</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

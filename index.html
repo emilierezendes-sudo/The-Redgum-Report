@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Redgum Report</title>
+<meta name="description" content="Family dispatches, book reviews, and photo journal from The Redgum Report.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { margin: 0; background: #f7f0dd; }
+  a { color: #8a4526; text-decoration: none; }
+  a:hover { color: #6a3419; text-decoration: underline; }
+  ::selection { background: rgba(193,101,47,0.25); }
+  .rr-dropdown:hover .rr-dropdown-panel { display: flex !important; }
+  .rr-dropdown-panel a:hover { background: #efe4c9; text-decoration: none; }
+  .rr-input::placeholder { color: rgba(34,31,27,0.45); }
+  .rr-photo-placeholder {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background: rgba(34,31,27,0.05); border: 1.5px dashed rgba(34,31,27,0.3);
+    color: rgba(34,31,27,0.55); font-size: 12px; padding: 12px; box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+<div style="font-family: 'Lora', Georgia, serif; color: #221f1b; background: #f7f0dd; min-height: 100vh;">
+
+  <nav class="rr-nav" style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 28px; padding: 14px 48px; background: rgba(247,240,221,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(34,31,27,0.14);">
+    <a href="index.html" style="display: flex; align-items: center; gap: 10px; color: #221f1b;">
+      <img src="uploads/redgum-report-logo.png" alt="The Redgum Report" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+      <span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 20px; letter-spacing: 0.01em;">The Redgum Report</span>
+    </a>
+    <div class="rr-navlinks" style="display: flex; align-items: center; gap: 24px; margin-left: auto; font-size: 14px;">
+      <a href="index.html#about" style="color: #221f1b;">About</a>
+      <a href="newsletter-post.html" style="color: #221f1b;">Newsletter</a>
+      <div class="rr-dropdown" style="position: relative;">
+        <a href="book-review.html" style="color: #221f1b; display: inline-flex; align-items: center; gap: 4px;">Book Reviews <span style="font-size: 9px;">&#9662;</span></a>
+        <div class="rr-dropdown-panel" style="display: none; flex-direction: column; position: absolute; top: 26px; left: 0; background: #f7f0dd; border: 1px solid rgba(34,31,27,0.14); border-radius: 12px; padding: 8px; min-width: 180px; box-shadow: 0 12px 28px rgba(34,31,27,0.15); gap: 2px;">
+          <a href="book-review.html" style="padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #221f1b;">This Month's Pick</a>
+          <a href="book-review-archive.html" style="padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #221f1b;">Archive</a>
+        </div>
+      </div>
+      <a href="photo-journal.html" style="color: #221f1b;">Photo Journal</a>
+    </div>
+  </nav>
+
+  <header class="rr-hero" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; max-width: 1180px; margin: 0 auto; padding: 88px 48px 96px;">
+    <div>
+      <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin-bottom: 18px;">Est. 2020 &middot; A Family Dispatch</div>
+      <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 64px; line-height: 1.04; margin: 0 0 22px; letter-spacing: -0.01em;">Stories, books,<br>and the odd loud dog.</h1>
+      <p style="font-size: 18px; line-height: 1.65; max-width: 480px; color: rgba(34,31,27,0.78); margin: 0 0 32px;">A newsletter about what's actually happening around here &mdash; the family news, the book we couldn't put down (or wished we had), and whatever's blooming in the yard this week.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="newsletter-post.html" style="display: inline-flex; align-items: center; padding: 13px 26px; border-radius: 999px; background: #345457; color: #f7f0dd; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 16px; text-decoration: none;">Read the Newsletter</a>
+        <a href="book-review.html" style="display: inline-flex; align-items: center; padding: 13px 26px; border-radius: 999px; border: 1.5px solid #345457; color: #345457; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 16px; text-decoration: none;">Latest Book Review</a>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <img src="uploads/redgum-report-logo.png" alt="Redgum Report emblem: an open book with wildflowers" style="width: 100%; max-width: 380px; border-radius: 24px; box-shadow: 0 20px 46px rgba(34,31,27,0.22);">
+    </div>
+  </header>
+
+  <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 0 48px 96px;">
+    <h2 class="rr-h2" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; margin: 0 0 8px;">What You'll Find Here</h2>
+    <div style="width: 56px; height: 3px; background: #c1652f; border-radius: 2px; margin-bottom: 36px;"></div>
+    <div class="rr-grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <a href="newsletter-post.html" style="display: flex; flex-direction: column; gap: 10px; padding: 26px 22px; border-radius: 18px; background: #efe4c9; border: 1px solid rgba(34,31,27,0.1); text-decoration: none; color: #221f1b;">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a4526;">Essays</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px;">The Newsletter</div>
+        <p style="margin: 0; font-size: 13.5px; color: rgba(34,31,27,0.68); line-height: 1.5;">Family goings-on, told with more affection than accuracy.</p>
+      </a>
+      <a href="book-review.html" style="display: flex; flex-direction: column; gap: 10px; padding: 26px 22px; border-radius: 18px; border: 1px solid rgba(34,31,27,0.1); text-decoration: none; color: #221f1b; background-color: #EFE4C9">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a4526;">Reading</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px;">Book Reviews</div>
+        <p style="margin: 0; font-size: 13.5px; color: rgba(34,31,27,0.68); line-height: 1.5;">One author a month &mdash; a bio, a book, and a verdict.</p>
+      </a>
+      <a href="photo-journal.html" style="display: flex; flex-direction: column; gap: 10px; padding: 26px 22px; border-radius: 18px; background: #efe4c9; border: 1px solid rgba(34,31,27,0.1); text-decoration: none; color: #221f1b;">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #46512f;">Snapshots</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px;">Photo Journal</div>
+        <p style="margin: 0; font-size: 13.5px; color: rgba(34,31,27,0.68); line-height: 1.5;">Whatever the camera caught this month.</p>
+      </a>
+      <a href="index.html#about" style="display: flex; flex-direction: column; gap: 10px; padding: 26px 22px; border-radius: 18px; background: #efe4c9; border: 1px solid rgba(34,31,27,0.1); text-decoration: none; color: #221f1b;">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #46512f;">Who's Writing</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px;">About</div>
+        <p style="margin: 0; font-size: 13.5px; color: rgba(34,31,27,0.68); line-height: 1.5;">The person behind the reports, briefly explained.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="rr-section" style="background: #345457; color: #f7f0dd; padding: 76px 48px;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #f0b9a0; margin-bottom: 14px;">New Feature &middot; Author of the Month</div>
+      <h2 class="rr-h2" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 34px; margin: 0 0 18px;">A New Idea</h2>
+      <p style="font-size: 17px; line-height: 1.7; color: rgba(247,240,221,0.88); margin: 0 0 28px; max-width: 720px;">As I was preparing to write this month's article about the happenings in my family, I decided to start a new piece of this newsletter&mdash;the author of the month page! In this page I will give a brief summary about the author, share with you what book of theirs we read, and either recommend the book or inform you why I would never read it again. I hope this is fun and informative, enjoy!</p>
+      <a href="book-review.html" style="display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 999px; border: 1.5px solid #f7f0dd; color: #f7f0dd; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; text-decoration: none;">Read This Month's Author &rarr;</a>
+    </div>
+  </section>
+
+  <section id="about" class="rr-about" style="max-width: 1180px; margin: 0 auto; padding: 96px 48px 48px; display: grid; grid-template-columns: 0.6fr 1.4fr; gap: 48px; align-items: center;">
+    <div style="position: relative; width: 220px; height: 220px;">
+      <img src="uploads/about-portrait.webp" alt="Portrait for the About section" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 50%;">Drop a portrait</div>
+    </div>
+    <div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; margin: 0 0 14px;">About the Report</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(34,31,27,0.78); margin: 0 0 14px; max-width: 620px;">I started The Redgum Report to keep far-flung family and friends in the loop, and it's slowly turned into a small habit of noticing things &mdash; a good book, a good photo, a good excuse to write something down. It comes out roughly monthly, whenever life allows.</p>
+      <p style="font-size: 16px; line-height: 1.7; color: rgba(34,31,27,0.78); margin: 0; max-width: 620px;">Expect family updates, the occasional strong opinion about a novel, and photos that are 40% garden and 60% dog.</p>
+    </div>
+  </section>
+
+  <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 0 48px 96px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 12px;">
+      <h3 class="rr-h2" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 0;">From the Photo Journal</h3>
+      <a href="photo-journal.html" style="font-size: 14px;">See the full photo journal &rarr;</a>
+    </div>
+    <div style="width: 56px; height: 3px; background: #345457; border-radius: 2px; margin-bottom: 36px;"></div>
+    <div class="rr-grid-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-2.webp" alt="Corduroy in Yosemite" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Corduroy in Yosemite</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-3.webp" alt="Flowers :)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Flowers :)</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-4.webp" alt="More flowers :)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">More flowers :)</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
+          <img src="uploads/photo-journal-1.webp" alt="Bouncing down the mountain at sunset" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
+        </div>
+        <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">Bouncing down the mountain at sunset</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="rr-section" style="max-width: 1180px; margin: 0 auto 96px; padding: 0 48px;">
+    <div class="rr-cta" style="border-radius: 24px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; background-color: #EFE4C9">
+      <div>
+        <h2 class="rr-h2" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 0 0 8px;">Get the next dispatch</h2>
+        <p style="margin: 0; font-size: 14.5px; color: rgba(34,31,27,0.7);">No spam, just family news and book opinions, roughly once a month.</p>
+      </div>
+      <!--
+        Buttondown embeddable form, wired to the TheRedgumReport account.
+        Subscribers land in your Buttondown dashboard. If you ever rename the
+        account, update the username in both the action URL and the onsubmit
+        popup URL below.
+      -->
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/TheRedgumReport"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/TheRedgumReport', 'popupwindow')"
+        class="rr-form"
+        style="display: flex; gap: 10px; flex-wrap: wrap;"
+      >
+        <input type="email" name="email" placeholder="you@email.com" class="rr-input" required style="min-width: 240px; padding: 13px 18px; border-radius: 999px; border: 1px solid rgba(34,31,27,0.2); background: #f7f0dd; font-family: 'Lora', serif; font-size: 14px; color: #221f1b;">
+        <input type="hidden" value="1" name="embed">
+        <button type="submit" style="padding: 13px 26px; border-radius: 999px; border: none; background: #345457; color: #f7f0dd; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; cursor: pointer;">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="rr-footer" style="border-top: 1px solid rgba(34,31,27,0.14); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div style="font-size: 13px; color: rgba(34,31,27,0.6);">&copy; 2026 The Redgum Report &middot; Made with too much tea and one loud dog</div>
+    <div style="display: flex; gap: 20px; font-size: 13px;">
+      <a href="index.html#about" style="color: #221f1b;">About</a>
+      <a href="newsletter-post.html" style="color: #221f1b;">Newsletter</a>
+      <div class="rr-dropdown" style="position: relative;">
+        <a href="book-review.html" style="color: #221f1b; display: inline-flex; align-items: center; gap: 4px;">Book Reviews <span style="font-size: 9px;">&#9662;</span></a>
+        <div class="rr-dropdown-panel" style="display: none; flex-direction: column; position: absolute; top: 26px; left: 0; background: #f7f0dd; border: 1px solid rgba(34,31,27,0.14); border-radius: 12px; padding: 8px; min-width: 180px; box-shadow: 0 12px 28px rgba(34,31,27,0.15); gap: 2px;">
+          <a href="book-review.html" style="padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #221f1b;">This Month's Pick</a>
+          <a href="book-review-archive.html" style="padding: 8px 12px; border-radius: 8px; font-size: 13px; color: #221f1b;">Archive</a>
+        </div>
+      </div>
+      <a href="photo-journal.html" style="color: #221f1b;">Photo Journal</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

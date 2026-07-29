@@ -1,0 +1,19 @@
+# Windows / OneDrive clutter
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS (in case anyone else opens this)
+.DS_Store
+
+# Office lock files
+~$*
+
+# Editor scratch
+*.tmp
+*.bak
+*~
+
+# Design-tool state (photos are exported into uploads/ as real files instead)
+.image-slots.state.json

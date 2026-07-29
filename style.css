@@ -1,0 +1,72 @@
+/* The Redgum Report — responsive layout rules.
+   The page markup uses inline styles (carried over from the original design),
+   so these overrides need !important to win the cascade. Loaded by all pages. */
+
+img { max-width: 100%; }
+
+/* ---------- Tablet and below ---------- */
+@media (max-width: 860px) {
+
+  /* Nav: tighter sides, let the links wrap under the logo */
+  .rr-nav { padding: 12px 20px !important; gap: 16px !important; flex-wrap: wrap !important; }
+  .rr-navlinks { gap: 16px !important; flex-wrap: wrap !important; }
+
+  /* Stack the two-column layouts */
+  .rr-hero,
+  .rr-about { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .rr-hero { padding: 48px 20px 56px !important; }
+  .rr-about { padding: 56px 20px 32px !important; }
+
+  /* Card rows and photo grids both go two-across */
+  .rr-grid-4,
+  .rr-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Wide "span 2" feature photos stop spanning once the grid narrows */
+  .rr-span2 { grid-column: auto !important; }
+
+  /* Generic page sections and articles: pull in the wide side padding */
+  .rr-section { padding-left: 20px !important; padding-right: 20px !important; }
+  .rr-article { padding: 48px 20px 64px !important; }
+  .rr-header { padding: 48px 20px 16px !important; }
+
+  /* Archive's tinted author sections: drop the negative-margin bleed, which
+     would otherwise push them past the narrowed article padding and cause
+     sideways scrolling. */
+  .rr-archive-section { padding: 32px 20px !important; margin: 0 !important; }
+
+  /* Headings scale down so they stop overflowing */
+  .rr-h1 { font-size: 38px !important; }
+  .rr-h2 { font-size: 26px !important; }
+
+  /* Photo/text rows stack */
+  .rr-media-row { flex-direction: column !important; align-items: flex-start !important; gap: 18px !important; }
+  .rr-book-grid { grid-template-columns: 1fr !important; }
+
+  /* Subscribe card */
+  .rr-cta { padding: 32px 24px !important; }
+
+  .rr-footer { padding: 24px 20px !important; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+
+  /* Text cards go one-per-row (two is too cramped to read).
+     Photo grids deliberately STAY two-across — a column of full-width 4:5
+     photos turns these pages into an endless scroll. */
+  .rr-grid-4 { grid-template-columns: 1fr !important; }
+
+  .rr-h1 { font-size: 30px !important; }
+  .rr-h2 { font-size: 22px !important; }
+
+  .rr-archive-section { padding: 28px 18px !important; }
+
+  /* Archive's 3-up thumbnail strips stay 3-up but tighten */
+  .rr-thumbs { gap: 8px !important; }
+
+  /* Full-width subscribe field + button */
+  .rr-form { width: 100% !important; }
+  .rr-form input { min-width: 0 !important; flex: 1 1 100% !important; }
+  .rr-form button { flex: 1 1 100% !important; }
+
+  .rr-footer { flex-direction: column !important; align-items: flex-start !important; }
+}
