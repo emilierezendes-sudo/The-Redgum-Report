@@ -1,3 +1,3 @@
 ## Get the next dispatch
 
-No spam, just family news and book opinions, roughly once a month.
+No spam, just family news, book opinions, and bad jokes. Roughly bi-monthly.
