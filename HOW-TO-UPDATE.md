@@ -11,6 +11,7 @@ for you. That's the one you'll edit most, and it's the easiest.
 | `newsletter-post.md` | **The newsletter — plain text, write freely.** |
 | `book-review.md` | **This month's Author of the Month — a form you fill in.** |
 | `_authors/*.md` | **One file per past author.** The archive page builds itself from these. |
+| `_includes/about.md` | **The About wording** shown on the home page. |
 | `index.html` | Home page (hero, About, photo previews, subscribe form) — still HTML |
 | `photo-journal.html` | Full photo grid — still HTML |
 | `book-review-archive.html` | Just a title; the content comes from `_authors/` |
@@ -62,6 +63,26 @@ dispatches — that's a small addition.)
 **Editing in a browser instead:** on github.com open `newsletter-post.md` and
 click the pencil icon. There's a Preview tab, and Commit changes publishes it.
 Works from a phone, and nothing to install.
+
+## The About section
+
+Open `_includes/about.md`. It holds nothing but the heading and the two
+paragraphs, in plain text:
+
+```
+## About the Report
+
+I started The Redgum Report to keep far-flung family and friends in the loop…
+
+Expect family updates, the occasional strong opinion about a novel…
+```
+
+Rewrite it however you like — same formatting marks as the newsletter (`*italic*`,
+`**bold**`, `[links](url)`, `- bullets`). Add or remove paragraphs freely; leave a
+blank line between them.
+
+Note it's a *section on the home page*, not a page of its own — the "About" nav
+link jumps down to it. The portrait beside it is `uploads/about-portrait.webp`.
 
 ## A new Author of the Month
 
