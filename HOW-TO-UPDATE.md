@@ -11,7 +11,10 @@ for you. That's the one you'll edit most, and it's the easiest.
 | `newsletter-post.md` | **The newsletter — plain text, write freely.** |
 | `book-review.md` | **This month's Author of the Month — a form you fill in.** |
 | `_authors/*.md` | **One file per past author.** The archive page builds itself from these. |
+| `_includes/hero.md` | **The big headline** on the home page and the line under it. |
 | `_includes/about.md` | **The About wording** shown on the home page. |
+| `_includes/feature-callout.md` | **The teal band** partway down the home page. |
+| `_includes/subscribe.md` | **The "Get the next dispatch" box.** |
 | `index.html` | Home page (hero, About, photo previews, subscribe form) — still HTML |
 | `photo-journal.html` | Full photo grid — still HTML |
 | `book-review-archive.html` | Just a title; the content comes from `_authors/` |
@@ -63,6 +66,38 @@ dispatches — that's a small addition.)
 **Editing in a browser instead:** on github.com open `newsletter-post.md` and
 click the pencil icon. There's a Preview tab, and Commit changes publishes it.
 Works from a phone, and nothing to install.
+
+## The home page
+
+Every word on the home page is editable without touching HTML. The **writing**
+is in four separate files:
+
+| File | What it controls |
+|---|---|
+| `_includes/hero.md` | The big headline and the sentence under it |
+| `_includes/feature-callout.md` | The teal band — its heading and paragraph |
+| `_includes/about.md` | The About section |
+| `_includes/subscribe.md` | The "Get the next dispatch" heading and line |
+
+The **short bits** — button labels, the four cards, photo captions, the footer
+line — are in the block at the very top of `index.html`, between the `---`
+lines. Each has a comment saying what it does. They're there rather than in a
+`.md` file because they're lists and labels, not writing; Markdown has no good
+way to express "four cards, each with a label, a title, a sentence and a link."
+
+Some things you can do from that block:
+
+- **Reword a card**: change its `title` / `text`. Set `accent: rust` or
+  `accent: olive` for the little label's colour.
+- **Add or remove a card**: add or delete a `- eyebrow:` entry. The row adjusts.
+- **Change the photo previews**: edit `photo_previews` — the `file` must exist in
+  `uploads/`. These four also appear on the photo journal page, so change the
+  caption in both if you want them to match.
+- **Change a button's words or destination**: `label` and `href`.
+- **Rename the Buttondown account**: `buttondown_user`, in one place now.
+
+One quirk of the headline: `<br>` in `hero.md` is what splits it across two
+lines. Keep it, move it, or delete it for a single line.
 
 ## The About section
 
