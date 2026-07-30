@@ -26,6 +26,22 @@ img { max-width: 100%; }
 .rr-prose hr { border: 0; height: 1px; background: rgba(34,31,27,0.14); margin: 34px 0; }
 .rr-prose code { font-size: 0.9em; background: #efe4c9; padding: 1px 5px; border-radius: 4px; }
 
+/* Archive author sections run slightly smaller than the newsletter, matching
+   the original hand-written page. */
+.rr-prose-sm { font-size: 15.5px; line-height: 1.75; color: rgba(34,31,27,0.82); }
+.rr-prose-sm h2 { font-size: 20px; margin: 28px 0 10px; }
+.rr-prose-sm h3 { font-size: 18px; margin: 24px 0 8px; }
+.rr-prose-sm p { margin: 0 0 16px; }
+.rr-prose-sm blockquote { font-size: 18px; line-height: 1.6; margin: 0 0 24px; }
+.rr-prose-sm li { margin-bottom: 4px; }
+.rr-prose-sm ul, .rr-prose-sm ol { line-height: 1.85; }
+
+/* Two paragraph flavours carried over from the original archive:
+   an italic lead-in, and the small italic signature line. Marked in Markdown
+   with {: .rr-lead} / {: .rr-sig} on the line after the paragraph. */
+.rr-prose .rr-lead { font-style: italic; color: rgba(34,31,27,0.65); margin-bottom: 20px; }
+.rr-prose .rr-sig  { font-style: italic; color: rgba(34,31,27,0.55); font-size: 14px; }
+
 /* ---------- Tablet and below ---------- */
 @media (max-width: 860px) {
 

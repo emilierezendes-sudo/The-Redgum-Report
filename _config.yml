@@ -9,6 +9,12 @@ markdown: kramdown
 kramdown:
   smart_quotes: ["lsquo", "rsquo", "ldquo", "rdquo"]
 
+# Each file in _authors/ is one Author of the Month entry. They don't get their
+# own pages; book-review-archive.html gathers them all, ordered by `order`.
+collections:
+  authors:
+    output: false
+
 # Files kept in the repo but not published to the website
 exclude:
   - HOW-TO-UPDATE.md
