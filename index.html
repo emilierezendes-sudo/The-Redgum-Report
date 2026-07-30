@@ -1,3 +1,7 @@
+---
+# This header tells GitHub to build the page, which is what lets the About
+# section pull its wording from _includes/about.md. Leave it here.
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,10 +105,10 @@
       <img src="uploads/about-portrait.webp" alt="Portrait for the About section" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 50%;">Drop a portrait</div>
     </div>
-    <div>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; margin: 0 0 14px;">About the Report</h2>
-      <p style="font-size: 16px; line-height: 1.7; color: rgba(34,31,27,0.78); margin: 0 0 14px; max-width: 620px;">I started The Redgum Report to keep far-flung family and friends in the loop, and it's slowly turned into a small habit of noticing things &mdash; a good book, a good photo, a good excuse to write something down. It comes out roughly monthly, whenever life allows.</p>
-      <p style="font-size: 16px; line-height: 1.7; color: rgba(34,31,27,0.78); margin: 0; max-width: 620px;">Expect family updates, the occasional strong opinion about a novel, and photos that are 40% garden and 60% dog.</p>
+    <!-- The wording lives in _includes/about.md - edit that file, not this one. -->
+    <div class="rr-prose rr-prose-about">
+      {%- capture about_copy -%}{%- include about.md -%}{%- endcapture -%}
+      {{ about_copy | markdownify }}
     </div>
   </section>
 
