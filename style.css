@@ -4,6 +4,28 @@
 
 img { max-width: 100%; }
 
+/* ---------- Prose written in Markdown ----------
+   Pages built from a .md file produce plain <p>, <blockquote>, <h2>, <ul>…
+   with no inline styles, so the newsletter's look lives here instead. */
+.rr-prose { font-size: 17px; line-height: 1.8; color: #221f1b; }
+.rr-prose > *:first-child { margin-top: 0; }
+.rr-prose > *:last-child { margin-bottom: 0; }
+.rr-prose p { margin: 0 0 22px; }
+.rr-prose blockquote {
+  margin: 0 0 22px; padding: 0 0 0 20px; border-left: 3px solid #c1652f;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 21px; line-height: 1.5; color: #345457;
+}
+.rr-prose blockquote p { margin: 0; font: inherit; color: inherit; }
+.rr-prose h2, .rr-prose h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+.rr-prose h2 { font-size: 28px; margin: 34px 0 12px; }
+.rr-prose h3 { font-size: 22px; margin: 28px 0 10px; }
+.rr-prose ul, .rr-prose ol { margin: 0 0 22px; padding-left: 22px; }
+.rr-prose li { margin-bottom: 8px; }
+.rr-prose img { border-radius: 16px; margin: 6px 0 22px; }
+.rr-prose hr { border: 0; height: 1px; background: rgba(34,31,27,0.14); margin: 34px 0; }
+.rr-prose code { font-size: 0.9em; background: #efe4c9; padding: 1px 5px; border-radius: 4px; }
+
 /* ---------- Tablet and below ---------- */
 @media (max-width: 860px) {
 
@@ -57,6 +79,11 @@ img { max-width: 100%; }
 
   .rr-h1 { font-size: 30px !important; }
   .rr-h2 { font-size: 22px !important; }
+
+  /* Prose reads better slightly smaller on a phone */
+  .rr-prose { font-size: 16px !important; }
+  .rr-prose blockquote { font-size: 19px !important; }
+  .rr-prose h2 { font-size: 24px !important; }
 
   .rr-archive-section { padding: 28px 18px !important; }
 

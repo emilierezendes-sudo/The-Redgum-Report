@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The One Where the Fence Finally Falls Down &middot; The Redgum Report</title>
+<title>{{ page.title }} &middot; The Redgum Report</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -40,25 +40,23 @@
 
   <article class="rr-article" style="max-width: 720px; margin: 0 auto; padding: 72px 32px 100px;">
     <a href="index.html" style="font-size: 13px; color: rgba(34,31,27,0.6);">&larr; Back home</a>
-    <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin: 24px 0 14px;">Newsletter &middot; July 2026</div>
-    <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 46px; line-height: 1.1; margin: 0 0 18px;">The One Where the Fence Finally Falls Down</h1>
-    <p style="font-size: 14px; color: rgba(34,31,27,0.6); margin: 0 0 40px;">Written on a Sunday, mostly true</p>
+    {% if page.kicker %}<div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin: 24px 0 14px;">{{ page.kicker }}</div>{% endif %}
+    <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 46px; line-height: 1.1; margin: 0 0 18px;">{{ page.title }}</h1>
+    {% if page.byline %}<p style="font-size: 14px; color: rgba(34,31,27,0.6); margin: 0 0 40px;">{{ page.byline }}</p>{% endif %}
 
-    <div style="font-size: 17px; line-height: 1.8; color: #221f1b;">
-      <p style="margin: 0 0 22px;">The back fence has been "leaning thoughtfully" since March, according to whoever last defended it to me, and this week it stopped thinking and just fell over. Not dramatically &mdash; more like it sat down. The dog investigated for eleven minutes, decided it was now a bridge, and has not respected the property line since.</p>
-      <p style="margin: 0 0 22px;">In better news, the tomatoes did not fall over, and are in fact showing off, which is the one area of the yard currently outperforming expectations. We've eaten approximately four salads' worth straight off the vine while "checking on them," which I've decided doesn't count as harvesting.</p>
-      <p style="margin: 0 0 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; line-height: 1.5; color: #345457; border-left: 3px solid #c1652f; padding-left: 20px;">"We are not fixing the fence this weekend," I said, with the confidence of someone who has never once fixed a fence.</p>
-      <p style="margin: 0 0 22px;">The bigger news, if I'm honest, is that everyone made it home for a proper Sunday dinner for the first time in what felt like months &mdash; same table, same too-many-side-dishes, same argument about whether the dog is allowed a seat (he is not; he sat anyway). It's the kind of ordinary evening I used to not think twice about, and now write a whole newsletter around.</p>
-      <p style="margin: 0;">Fence repair is now scheduled for "next weekend," which is Redgum Report shorthand for sometime this autumn. I'll keep you posted. In the meantime: go check on your own tomatoes.</p>
+    <div class="rr-prose">
+      {{ content }}
     </div>
 
-    <div style="display: flex; gap: 10px; margin: 40px 0;">
-      <span style="display: inline-flex; align-items: center; font-size: 11px; padding: 5px 14px; border-radius: 999px; background: #efe4c9; color: #46512f;">Family</span>
-      <span style="display: inline-flex; align-items: center; font-size: 11px; padding: 5px 14px; border-radius: 999px; background: #efe4c9; color: #8a4526;">Garden</span>
-      <span style="display: inline-flex; align-items: center; font-size: 11px; padding: 5px 14px; border-radius: 999px; background: #efe4c9; color: #46512f;">Dispatch</span>
+    {% if page.topics %}
+    <div style="display: flex; gap: 10px; margin: 40px 0; flex-wrap: wrap;">
+      {% for topic in page.topics %}
+      <span style="display: inline-flex; align-items: center; font-size: 11px; padding: 5px 14px; border-radius: 999px; background: #efe4c9; color: {% cycle '#46512f', '#8a4526' %};">{{ topic }}</span>
+      {% endfor %}
     </div>
+    {% endif %}
 
-    <div style="border-top: 1px solid rgba(34,31,27,0.14); padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px;">
+    <div style="border-top: 1px solid rgba(34,31,27,0.14); padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; gap: 16px; flex-wrap: wrap;">
       <a href="index.html">&larr; All dispatches</a>
       <a href="book-review.html">This month's book review &rarr;</a>
     </div>

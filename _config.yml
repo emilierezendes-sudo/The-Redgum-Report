@@ -1,0 +1,15 @@
+# Jekyll config. GitHub Pages reads this and builds the site on every push.
+# You should not need to edit this file.
+
+title: The Redgum Report
+description: Family dispatches, book reviews, and photo journal from The Redgum Report.
+
+# Turn straight quotes and -- into proper typographic quotes and dashes
+markdown: kramdown
+kramdown:
+  smart_quotes: ["lsquo", "rsquo", "ldquo", "rdquo"]
+
+# Files kept in the repo but not published to the website
+exclude:
+  - HOW-TO-UPDATE.md
+  - README.md
