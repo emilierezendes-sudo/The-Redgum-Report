@@ -1,3 +1,6 @@
 ## A New Idea
 
-As I was preparing to write this month's article about the happenings in my family, I decided to start a new piece of this newsletter—the author of the month page! In this page I will give a brief summary about the author, share with you what book of theirs we read, and either recommend the book or inform you why I would never read it again. I hope this is fun and informative, enjoy!
+Up until recently I never considered my inner musings important or interesting enough to share with anyone other than my grandmother (love you by the way!), so I honestly surprised myself when I created an email list. I guess I decided I wanted to annoy more people. And just to be clear, I didn’t surprise my socks off, but that’s just because I like wearing them instead. 
+
+If you want to subscribe to my email list (hint hint), it will act as an extension of my website, complete with bad jokes (yes, b, not d), personal stories, and any other tidbits that don’t make it onto the official story. 
+
