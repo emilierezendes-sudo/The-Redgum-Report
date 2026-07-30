@@ -36,6 +36,10 @@ img { max-width: 100%; }
 .rr-prose-sm li { margin-bottom: 4px; }
 .rr-prose-sm ul, .rr-prose-sm ol { line-height: 1.85; }
 
+/* The author bio next to the round photo on the book review page */
+.rr-prose-bio { font-size: 15px; line-height: 1.6; color: rgba(34,31,27,0.72); }
+.rr-prose-bio p { margin: 0 0 12px; }
+
 /* Two paragraph flavours carried over from the original archive:
    an italic lead-in, and the small italic signature line. Marked in Markdown
    with {: .rr-lead} / {: .rr-sig} on the line after the paragraph. */

@@ -45,20 +45,22 @@
 
   <article class="rr-article" style="max-width: 760px; margin: 0 auto; padding: 72px 32px 100px;">
     <a href="index.html" style="font-size: 13px; color: rgba(34,31,27,0.6);">&larr; Back home</a>
-    <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin: 24px 0 14px;">Book Review &middot; Author of the Month</div>
-    <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 44px; line-height: 1.1; margin: 0 0 28px;">This Month's Pick</h1>
+    <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #46512f; margin: 24px 0 14px;">{{ page.kicker }}</div>
+    <h1 class="rr-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 44px; line-height: 1.1; margin: 0 0 28px;">{{ page.title }}</h1>
 
-    <p style="font-size: 17px; line-height: 1.8; color: #221f1b; margin: 0 0 48px; padding: 28px 30px; border-radius: 18px; background-color: #EFE4C9">It's been a while since I wrote one of these &mdash; but a new Alex Rider binge means it's time to bring this feature back! Below: who wrote it, what we read, and the verdict. Want the ones from before? The <a href="book-review-archive.html">Book Review Archive</a> has every author of the month so far.</p>
+    {% if page.intro %}
+    <div class="rr-prose" style="margin: 0 0 48px; padding: 28px 30px; border-radius: 18px; background-color: #EFE4C9">{{ page.intro | markdownify }}</div>
+    {% endif %}
 
     <div class="rr-media-row" style="display: flex; gap: 28px; align-items: center; margin-bottom: 36px;">
       <div style="position: relative; width: 140px; height: 140px; flex: none;">
-        <img src="uploads/author-photo.webp" alt="This month's author" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="uploads/{{ page.author_photo }}" alt="{{ page.author }}" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover;{% if page.author_photo_position %} object-position: {{ page.author_photo_position }};{% endif %} filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 50%;">Drop author photo</div>
       </div>
       <div>
         <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a4526; margin-bottom: 6px;">This Month's Author</div>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; margin: 0 0 8px;">Anthony Horowitz</h2>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(34,31,27,0.72); max-width: 460px;">Anthony Horowitz is an award-winning, multi-talented, and multi-tasking guy. On a regular basis, he juggles writing books, filming TV series and films, writing plays and being a journalist. He has written over 50 books including the bestselling Alex Rider series, estimated to have sold 21 million copies worldwide and turned into a successful TV series.</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; margin: 0 0 8px;">{{ page.author }}</h2>
+        <div class="rr-prose rr-prose-bio" style="max-width: 460px;">{{ page.author_bio | markdownify }}</div>
       </div>
     </div>
 
@@ -68,29 +70,32 @@
       <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0 0 16px;">The Book We Read</h3>
       <div class="rr-book-grid" style="display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: start;">
         <div style="position: relative; width: 140px; aspect-ratio: 1/1;">
-          <img src="uploads/book-cover.webp" alt="Alex Rider book cover" style="width: 100%; height: 100%; object-fit: cover; object-position: 0% 50%; border-radius: 10px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="uploads/{{ page.book_cover }}" alt="{{ page.book }} book cover" style="width: 100%; height: 100%; object-fit: cover;{% if page.book_cover_position %} object-position: {{ page.book_cover_position }};{% endif %} border-radius: 10px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 10px;">Drop book cover (square)</div>
         </div>
         <div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 20px; margin-bottom: 4px;">Alex Rider</div>
-          <div style="font-size: 13.5px; color: rgba(34,31,27,0.6); margin-bottom: 14px;">Spy Thriller &middot; Book Series</div>
-          <p style="margin: 0 0 12px; font-size: 15.5px; line-height: 1.75; color: rgba(34,31,27,0.8);">The Alex Rider series is about a 14-year-old English boy by the same name as the books. In the beginning, he is just a regular teenager with a regular life &mdash; raised by his uncle Ian Rider since his parents died in a plane crash when he was a toddler. Everything changes when Ian dies in a suspicious car accident, and Alex discovers his uncle wasn't a banker at all, but a spy for MI6 who had secretly been training Alex to be one too.</p>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.75; color: rgba(34,31,27,0.8);">Alex wants nothing to do with his uncle's business, but is pulled into it again and again by MI6, simply because he looks so inconspicuous he can pass unnoticed. Across the series he survives numerous villains, saves countless lives, and discovers that saving the world is not everything it's cracked up to be.</p>
+          <div style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 20px; margin-bottom: 4px;">{{ page.book }}</div>
+          <div style="font-size: 13.5px; color: rgba(34,31,27,0.6); margin-bottom: 14px;">{{ page.book_meta }}</div>
+          <div class="rr-prose rr-prose-sm">{{ page.book_summary | markdownify }}</div>
         </div>
       </div>
     </section>
 
     <section style="border-radius: 20px; padding: 30px 32px; background-color: #EFE4C9">
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0;">Hard to Put Down</h3>
-        <span style="display: inline-flex; align-items: center; font-size: 12px; padding: 5px 14px; border-radius: 999px; color: #f7f0dd; background-color: #345457">Recommend</span>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0;">{{ page.verdict_title }}</h3>
+        {% if page.verdict_badge %}
+        <span style="display: inline-flex; align-items: center; font-size: 12px; padding: 5px 14px; border-radius: 999px; color: #f7f0dd; background-color: {{ page.verdict_badge_color | default: '#345457' }}">{{ page.verdict_badge }}</span>
+        {% endif %}
       </div>
-      <p style="margin: 0; font-size: 15.5px; line-height: 1.75; color: rgba(34,31,27,0.82);">I've really enjoyed the Alex Rider series! It's the kind of book series that is soooo hard to put down &mdash; even when I knew I had a ton of homework to get done, I just kept reading. I love the character of Alex: although he hates being dragged into spy business and espionage, he's unwilling to let the bad guys win and is very self-sacrificial and loyal. Those traits, mixed with his natural self-deprecation and awesome skill set, make him a really cool character.</p>
+      <div class="rr-prose rr-prose-sm">{{ page.verdict | markdownify }}</div>
     </section>
 
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(34,31,27,0.6); margin: 40px 0 0;">Until next month's stack &mdash; happy reading.</p>
+    {% if page.closing %}
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(34,31,27,0.6); margin: 40px 0 0;">{{ page.closing }}</p>
+    {% endif %}
 
-    <div style="border-top: 1px solid rgba(34,31,27,0.14); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px;">
+    <div style="border-top: 1px solid rgba(34,31,27,0.14); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; gap: 16px; flex-wrap: wrap;">
       <a href="book-review-archive.html">&larr; Browse the archive</a>
       <a href="index.html">Back home &rarr;</a>
     </div>
