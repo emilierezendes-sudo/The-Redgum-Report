@@ -63,29 +63,15 @@ dispatches — that's a small addition.)
 click the pencil icon. There's a Preview tab, and Commit changes publishes it.
 Works from a phone, and nothing to install.
 
-## This month's book review
+## A new Author of the Month
 
-Open `book-review.md`. The whole page is a set of labelled fields — replace the
-values and you have a new review. The fields are `author`, `author_bio`,
-`book`, `book_meta`, `book_summary`, `verdict_title`, `verdict_badge` and
-`verdict`, each with a comment above it saying where it appears on the page.
+**You never move anything to the archive.** This Month's Pick shows whichever
+file in `_authors/` has the highest `order`. Add next month's file and it becomes
+the pick; last month's drops into the archive on its own.
 
-The `|` after a field name means "the indented text below is the value" — keep
-that indentation, and leave a blank line between paragraphs if you want more
-than one.
-
-`verdict_badge` is the little pill next to the verdict heading. Change the
-words freely ("Would Not Reread", "Recommend With Caveats"). Add
-`verdict_badge_color: '#8a4526'` to make it rust instead of teal.
-
-Photos: put the new `author-photo` and `book-cover` in `uploads/` and update the
-`author_photo:` / `book_cover:` filenames to match. Delete the
-`book_cover_position:` line unless the new cover needs the same off-centre
-framing.
-
-## Adding an author to the archive
-
-Create a new file in `_authors/` — copy an existing one to get the shape:
+So the whole job is: create one file in `_authors/`. Copy
+`_authors/anthony-horowitz.md` and change the values — it has a comment above
+each field saying where it lands on the page.
 
 ```
 ---
@@ -93,27 +79,49 @@ title: 'Anthony Horowitz'
 slug: anthony-horowitz
 order: 15
 photos:
-  - file: anthony-horowitz-photo-1.jpg
-  - file: anthony-horowitz-photo-2.jpg
+  - file: anthony-horowitz-photo-1.webp
+  - file: anthony-horowitz-photo-2.webp
+
+intro: |
+  The cream box at the top. Optional.
+
+author_bio: |
+  Shown beside the round photo.
+
+book: Alex Rider
+book_meta: Spy Thriller · Book Series
+book_summary: |
+  One paragraph, or several with a blank line between.
+
+verdict_title: Hard to Put Down
+verdict_badge: Recommend
+verdict: |
+  What you actually thought.
+
+closing: Until next month's stack — happy reading.
 ---
-
-## Who is Anthony Horowitz?
-
-Your writing here.
 ```
 
-- `title` is the author's name as it appears on the page and in the jump-links.
-- `slug` must match the filename (without `.md`) — it's the link target.
-- `order` decides position; give the newest the next number up.
-- `photos` is optional, and one, two or three all work.
+Things that matter:
 
-That's it. The archive page picks it up, adds the jump-link at the top, and
-alternates the cream/tinted panel automatically.
+- **`order` must be higher than every other author** — that's what makes it this
+  month's pick. Next one is 16, then 17.
+- **`slug` must match the filename** without `.md`. It's the archive link target.
+- **`photos`: the first is the author** (shown round), **the second is the book
+  cover** (shown square). A third is optional and only shows in the archive.
+- **Name photos after the author** — `anthony-horowitz-photo-1.webp`, not
+  `author-photo.webp`. Reusing a generic name would make old archive entries
+  show the new month's photos.
+- The `|` after a field name means "the indented text below is the value". Keep
+  the indentation, and leave a blank line between paragraphs.
+- `verdict_badge` is the little pill. Any words work ("Would Not Reread"). Add
+  `verdict_badge_color: '#8a4526'` for a rust pill instead of teal.
 
-Two formatting marks you'll see in the existing author files:
-`{: .rr-lead}` on the line after a paragraph makes it an italic lead-in, and
-`{: .rr-sig}` makes it a small italic signature line. Ignore them unless you
-want that effect.
+Older author files are written differently — plain prose in the body with
+`## headings` instead of labelled fields. Both styles render fine, so there's no
+need to convert them. Two marks you'll see in those: `{: .rr-lead}` after a
+paragraph makes it an italic lead-in, `{: .rr-sig}` makes it a small italic
+signature.
 
 ## Photos — current state
 
