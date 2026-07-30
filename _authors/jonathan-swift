@@ -1,0 +1,31 @@
+---
+title: 'Jonathan Swift'
+slug: jonathan-swift
+order: 16
+
+# Photo 1 is the author (shown round on the pick page).
+# Photo 2 is the book cover (shown square). A third is optional.
+photos:
+  - file: anthony-horowitz-photo-1.webp
+  - file: anthony-horowitz-photo-2.webp
+    position: '0% 50%'
+
+# The cream box at the top of the pick page. Optional.
+intro: |
+  Somehow, someway I have lived 22 years in this world without reading Gulliver’s Travels. It seems like a real hole in my education, but I am filling it now. 
+
+author_bio: |
+ Jonathan Swift is one of the most famous authors in the world. How I never read this book I really can't tell. 
+book: Gulliver's Travels
+book_meta: Travelers Log · Single Book 
+book_summary: |
+  Gulliver’s Travels follows a dude, named Lemuel Gulliver, as he gets stranded not on one, nor two, but FOUR different lands. He meets tiny people, big people, smart people, and horse people, learning life lessons and random things along the way. My one question would be, after surviving several shipwrecks in several years, why does this guy keep going to sea??? 
+
+# verdict_badge is the little pill. Change the words freely, and add
+# verdict_badge_color: '#8a4526' for a rust pill instead of teal.
+verdict_title: Wild boat ride
+verdict_badge: Recommend
+verdict: |
+  So far I have really enjoyed reading Gulliver's Travels. It is the type of wild, fever dream kind of tale that makes me question my own imagination. 
+closing: Until next month's boat ride — happy reading.
+---
