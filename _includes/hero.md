@@ -1,3 +1,3 @@
-# Stories, books,<br>and the odd loud dog.
+# Stories, books,<br>and the odd forehead photo.
 
-A newsletter about what's actually happening around here — the family news, the book we couldn't put down (or wished we had), and whatever's blooming in the yard this week.
+A newsletter about what's actually happening around here — the family news, the book I couldn't put down (or wished I had), and whatever's burning in the oven… whoopies I should go check that!
