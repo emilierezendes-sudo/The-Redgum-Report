@@ -43,7 +43,14 @@
     </div>
   </nav>
 
-  {% assign authors = site.authors | sort: 'order' %}
+  {%- comment -%}
+    The newest entry lives on book-review.html as This Month's Pick, so the
+    archive lists everything before it. When a newer file is added, the previous
+    pick appears here automatically.
+  {%- endcomment -%}
+  {% assign all = site.authors | sort: 'order' %}
+  {% assign past_count = all | size | minus: 1 %}
+  {% assign authors = all | slice: 0, past_count %}
 
   <header class="rr-header" style="max-width: 820px; margin: 0 auto; padding: 72px 32px 8px;">
     <a href="book-review.html" style="font-size: 13px; color: rgba(34,31,27,0.6);">&larr; This month's pick</a>
@@ -79,7 +86,21 @@
       </div>
       {% endif %}
       <div class="rr-prose rr-prose-sm">
-        {{ a.content }}
+        {%- comment -%}
+          Older entries are written as plain prose in the file body. Entries that
+          came through the This Month's Pick template instead have labelled
+          fields, so lay those out into the same shape.
+        {%- endcomment -%}
+        {% if a.author_bio %}
+          {{ a.author_bio | markdownify }}
+          {% if a.book %}<h2>{{ a.book }}</h2>{% endif %}
+          {% if a.book_meta %}<p style="font-size: 13.5px; color: rgba(34,31,27,0.6); margin: -4px 0 12px;">{{ a.book_meta }}</p>{% endif %}
+          {{ a.book_summary | markdownify }}
+          {% if a.verdict_title %}<h2>{{ a.verdict_title }}{% if a.verdict_badge %} <span style="display: inline-flex; align-items: center; vertical-align: middle; font-family: 'Lora', serif; font-weight: 400; font-size: 12px; padding: 4px 12px; border-radius: 999px; color: #f7f0dd; background-color: {{ a.verdict_badge_color | default: '#345457' }}">{{ a.verdict_badge }}</span>{% endif %}</h2>{% endif %}
+          {{ a.verdict | markdownify }}
+        {% else %}
+          {{ a.content }}
+        {% endif %}
       </div>
     </section>
     {% unless forloop.last %}
