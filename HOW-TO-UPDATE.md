@@ -1,19 +1,66 @@
 # The Redgum Report — how to update the site
 
-The site is five plain HTML files. No build step, no tools needed — open any
-`.html` file in a text editor (Notepad works) to change text, or replace a file
-in `uploads/` to change a picture.
+Mostly plain HTML files you can edit in Notepad. The **newsletter** is different
+— it's written in Markdown (plain text), and GitHub turns it into the styled page
+for you. That's the one you'll edit most, and it's the easiest.
 
 ## The pages
 
 | File | What it is |
 |---|---|
+| `newsletter-post.md` | **The newsletter — plain text, write freely.** Becomes `newsletter-post.html` on the site. |
 | `index.html` | Home page (hero, About, photo previews, subscribe form) |
-| `newsletter-post.html` | The current newsletter dispatch |
 | `book-review.html` | This month's Author of the Month |
 | `book-review-archive.html` | All 14 past authors, with jump-links |
 | `photo-journal.html` | Full photo grid |
-| `style.css` | Shared rules that make the pages work on phones/tablets. You normally don't need to touch this. |
+| `style.css` | Shared styling. You normally don't need to touch this. |
+| `_layouts/`, `_config.yml` | Machinery that wraps the newsletter in the site design. Leave alone. |
+
+## Writing the newsletter
+
+Open `newsletter-post.md`. The top block between the `---` lines sets the
+headline and labels; everything below it is just your writing.
+
+```
+---
+layout: newsletter
+title: The One Where the Fence Finally Falls Down
+kicker: Newsletter · July 2026
+byline: Written on a Sunday, mostly true
+topics: [Family, Garden, Dispatch]
+---
+
+Just type paragraphs. Leave a blank line between them.
+
+> Start a line with > to make it a pull-quote.
+```
+
+Only `layout:` must stay exactly as it is. Change `title`, `kicker`, `byline`
+and `topics` freely — `topics` are the little pills at the bottom, and you can
+list as many or as few as you like.
+
+Formatting you can use in the body:
+
+| You type | You get |
+|---|---|
+| blank line between paragraphs | separate paragraphs |
+| `> some text` | a pull-quote (big italic teal, orange bar) |
+| `## A heading` | a section heading |
+| `*words*` | *italic* |
+| `**words**` | **bold** |
+| `[text](https://example.com)` | a link |
+| `- item` on each line | a bulleted list |
+
+Straight quotes and `--` are converted to proper curly quotes and dashes
+automatically, so don't worry about typing them fancy.
+
+**For next month:** copy `newsletter-post.md` somewhere safe if you want to keep
+the old one, then just rewrite it. (Ask me if you'd like a proper archive of past
+dispatches — that's a small addition.)
+
+**Editing in a browser instead:** on github.com open `newsletter-post.md` and
+click the pencil icon. There's a Preview tab, and Commit changes publishes it.
+Works from a phone, and nothing to install.
 
 ## Photos — current state
 
@@ -130,10 +177,12 @@ If you'd rather have your own domain (`theredgumreport.com`), you buy it from a
 registrar and point it at Netlify in Domain settings — worth asking for help
 with when you get there.
 
-## Adding a new month's newsletter
+## Keeping past newsletters
 
-Easiest approach: copy `newsletter-post.html` to a new name (e.g.
-`newsletter-2026-08.html`), edit the headline, date and body text in the copy,
-then update the "Newsletter" links in the nav of each page to point at the
-newest one. (If you'd rather have a proper list of past dispatches, that's a
-small addition worth asking for.)
+Right now there's one newsletter page, and writing next month's means rewriting
+`newsletter-post.md` — the old dispatch is replaced (though every version stays
+in the repo's history, so nothing is truly lost).
+
+If you'd like past dispatches to stay on the site with their own pages and an
+index listing them, that's a worthwhile addition and not much work — ask when
+you want it.
