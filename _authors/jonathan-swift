@@ -6,8 +6,8 @@ order: 16
 # Photo 1 is the author (shown round on the pick page).
 # Photo 2 is the book cover (shown square). A third is optional.
 photos:
-  - file: anthony-horowitz-photo-1.webp
-  - file: anthony-horowitz-photo-2.webp
+  - file: jonathan-swift-photo-1.webp
+  - file: jonathan-swift-photo-2.webp
     position: '0% 50%'
 
 # The cream box at the top of the pick page. Optional.
