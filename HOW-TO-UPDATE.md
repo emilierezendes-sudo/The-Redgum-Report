@@ -17,31 +17,41 @@ in `uploads/` to change a picture.
 
 ## Photos — current state
 
-**All 54 photo slots are filled.** They were imported from the Claude Design
-project export, so the site is complete as it stands.
+Mixed formats, for a reason:
 
-The files are **WebP** (`.webp`), not JPEG — that's the format the design editor
-stored them in. Every current browser handles WebP fine. They're capped at
-1200px on the long edge because the design editor re-compressed them on upload.
+- **Archive photos are `.jpg`**, 640px on the long edge. These are your
+  replacement photos, downscaled — the thumbnails render at only 244×183, so
+  640px is already about 2.6× more detail than any screen shows.
+- **Everything else is `.webp`** — those came out of the Claude Design export
+  in that format.
+
+**15 archive photos are deliberately absent.** The design-export versions were
+too low-resolution and looked soft, so they were removed rather than shown
+blurry. Their slots were taken out of the page too, so nothing looks broken —
+every author still has 1–3 photos. To fill one back in, drop a photo into
+`uploads/` and say so; the markup has to be re-added for it to appear.
+
+Nothing is lost: the low-res originals are in commit `5da8879`, and the
+full-size replacements in `99dd5e0`.
 
 ## Replacing a photo
 
 Drop a new file into `uploads/` using the **exact filename** below, replacing
-the old one. If your new photo is a `.jpg`, you have two options:
+the old one. Match the existing extension (`.jpg` for archive photos, `.webp`
+for the rest) — or use any extension and tell me, and I'll update the one
+`src="uploads/…"` line that points at it. Note that **renaming a `.jpg` to
+`.webp` does not convert it** and will break the image.
 
-1. Rename it to `.webp` — **this does not work**, renaming doesn't convert the
-   format. Don't do this.
-2. Either convert it to WebP first, **or** keep it as `.jpg` and edit the one
-   `src="uploads/….webp"` line in the HTML to say `.jpg` instead. The second is
-   easier if you're only changing one or two.
-
-Two rules that will bite you otherwise:
+Three rules that will bite you otherwise:
 
 - **Lowercase filenames and extensions.** Web hosts are case-sensitive even
   though Windows isn't. `Photo-Journal-1.webp` or `photo-1.JPG` will work when
   you double-click locally and then break once published.
-- **Keep photos under ~500 KB.** If you swap in a full-size phone photo (3–5 MB),
-  the page gets slow on cell data. Resize the long edge to about 1600px.
+- **Around 800px on the long edge is plenty**, and keep files under ~150 KB.
+  A full-size phone photo (3–5 MB) makes the page slow on cell data for no
+  visible gain — the archive thumbnails are tiny.
+- **Put it in `C:\Users\emili\projects\redgum-report\uploads\`.** That is the
+  live folder. Anything under OneDrive is not connected to the site.
 
 ### Filenames
 
