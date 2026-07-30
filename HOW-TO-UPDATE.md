@@ -8,13 +8,14 @@ for you. That's the one you'll edit most, and it's the easiest.
 
 | File | What it is |
 |---|---|
-| `newsletter-post.md` | **The newsletter — plain text, write freely.** Becomes `newsletter-post.html` on the site. |
-| `index.html` | Home page (hero, About, photo previews, subscribe form) |
-| `book-review.html` | This month's Author of the Month |
-| `book-review-archive.html` | All 14 past authors, with jump-links |
-| `photo-journal.html` | Full photo grid |
+| `newsletter-post.md` | **The newsletter — plain text, write freely.** |
+| `book-review.md` | **This month's Author of the Month — a form you fill in.** |
+| `_authors/*.md` | **One file per past author.** The archive page builds itself from these. |
+| `index.html` | Home page (hero, About, photo previews, subscribe form) — still HTML |
+| `photo-journal.html` | Full photo grid — still HTML |
+| `book-review-archive.html` | Just a title; the content comes from `_authors/` |
 | `style.css` | Shared styling. You normally don't need to touch this. |
-| `_layouts/`, `_config.yml` | Machinery that wraps the newsletter in the site design. Leave alone. |
+| `_layouts/`, `_config.yml` | Machinery that wraps your writing in the site design. Leave alone. |
 
 ## Writing the newsletter
 
@@ -61,6 +62,58 @@ dispatches — that's a small addition.)
 **Editing in a browser instead:** on github.com open `newsletter-post.md` and
 click the pencil icon. There's a Preview tab, and Commit changes publishes it.
 Works from a phone, and nothing to install.
+
+## This month's book review
+
+Open `book-review.md`. The whole page is a set of labelled fields — replace the
+values and you have a new review. The fields are `author`, `author_bio`,
+`book`, `book_meta`, `book_summary`, `verdict_title`, `verdict_badge` and
+`verdict`, each with a comment above it saying where it appears on the page.
+
+The `|` after a field name means "the indented text below is the value" — keep
+that indentation, and leave a blank line between paragraphs if you want more
+than one.
+
+`verdict_badge` is the little pill next to the verdict heading. Change the
+words freely ("Would Not Reread", "Recommend With Caveats"). Add
+`verdict_badge_color: '#8a4526'` to make it rust instead of teal.
+
+Photos: put the new `author-photo` and `book-cover` in `uploads/` and update the
+`author_photo:` / `book_cover:` filenames to match. Delete the
+`book_cover_position:` line unless the new cover needs the same off-centre
+framing.
+
+## Adding an author to the archive
+
+Create a new file in `_authors/` — copy an existing one to get the shape:
+
+```
+---
+title: 'Anthony Horowitz'
+slug: anthony-horowitz
+order: 15
+photos:
+  - file: anthony-horowitz-photo-1.jpg
+  - file: anthony-horowitz-photo-2.jpg
+---
+
+## Who is Anthony Horowitz?
+
+Your writing here.
+```
+
+- `title` is the author's name as it appears on the page and in the jump-links.
+- `slug` must match the filename (without `.md`) — it's the link target.
+- `order` decides position; give the newest the next number up.
+- `photos` is optional, and one, two or three all work.
+
+That's it. The archive page picks it up, adds the jump-link at the top, and
+alternates the cream/tinted panel automatically.
+
+Two formatting marks you'll see in the existing author files:
+`{: .rr-lead}` on the line after a paragraph makes it an italic lead-in, and
+`{: .rr-sig}` makes it a small italic signature line. Ignore them unless you
+want that effect.
 
 ## Photos — current state
 
