@@ -5,11 +5,14 @@ title: Whatever the Camera Caught
 kicker: Photo Journal
 intro: A running, mostly-unedited record — the garden, the dog, the light through the kitchen window, and everything else worth pointing a camera at.
 
-# Optional backdrop for the collage. Put an image in uploads/ and name it here,
-# e.g. background: journal-paper.jpg — leave it blank for the built-in paper.
-# background_fit: cover stretches it to fill; tile repeats it at actual size.
-background:
-background_fit: cover
+# Backdrop for the collage. Put an image in uploads/ and name it here; leave it
+# blank for the built-in paper. background_fit can be:
+#   fitwidth  spans the full width at its true proportions, repeating downwards
+#             if the page gets taller. Best for a designed collage like this one.
+#   tile      repeats at actual size. Best for a seamless paper texture.
+#   cover     stretches to fill, cropping whatever doesn't fit.
+background: photo-journal-background.jpg
+background_fit: fitwidth
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +71,14 @@ background_fit: cover
       `background:` in the front matter above swaps the built-in paper backdrop
       for an image of your own from uploads/.
     {%- endcomment -%}
-    <div class="rr-journal-bg"{% if page.background %} style="background-color: transparent; background-image: url('uploads/{{ page.background }}'); background-size: {% if page.background_fit == 'tile' %}auto{% else %}cover{% endif %}; background-position: center;"{% endif %}>
+    {%- if page.background -%}
+      {%- case page.background_fit -%}
+        {%- when 'tile' -%}    {%- assign bgsize = 'auto' -%}      {%- assign bgrepeat = 'repeat' -%}
+        {%- when 'cover' -%}   {%- assign bgsize = 'cover' -%}     {%- assign bgrepeat = 'no-repeat' -%}
+        {%- else -%}           {%- assign bgsize = '100% auto' -%} {%- assign bgrepeat = 'repeat-y' -%}
+      {%- endcase -%}
+    {%- endif -%}
+    <div class="rr-journal-bg"{% if page.background %} style="background-color: #f0e6cd; background-image: url('uploads/{{ page.background }}'); background-size: {{ bgsize }}; background-repeat: {{ bgrepeat }}; background-position: top center;"{% endif %}>
       <div class="rr-scrapbook">
         {% for item in site.data.photos %}
 
