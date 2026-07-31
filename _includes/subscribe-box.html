@@ -4,7 +4,7 @@
   Optional params so it lines up with each page's column width:
     {% include subscribe-box.html maxwidth='720px' pad='32px' %}
 {%- endcomment -%}
-<section class="rr-section" style="max-width: {{ include.maxwidth | default: '1180px' }}; margin: 0 auto 96px; padding: 0 {{ include.pad | default: '48px' }};">
+<section id="subscribe" class="rr-section" style="max-width: {{ include.maxwidth | default: '1180px' }}; margin: 0 auto 96px; padding: 0 {{ include.pad | default: '48px' }}; scroll-margin-top: 90px;">
   <div class="rr-cta" style="border-radius: 24px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; background-color: #EFE4C9">
     <div class="rr-cta-copy">
       {%- capture subscribe_copy -%}{%- include subscribe.md -%}{%- endcapture -%}
