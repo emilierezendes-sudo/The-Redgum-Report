@@ -179,6 +179,15 @@ shared file. Change its wording in **`_includes/subscribe.md`** and it updates
 everywhere at once. The Buttondown account name and the button/placeholder text
 are in `_config.yml`.
 
+## The footer
+
+Also shared across every page. The line of text is **`footer_note`** in
+`_config.yml` — edit it there and all five pages change together. (You'll want
+to bump the year each January.)
+
+The row of links beside it is in `_includes/footer.html`, if you ever need to add
+or rename one.
+
 ## The About section
 
 Open `_includes/about.md`. It holds nothing but the heading and the two
