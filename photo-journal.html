@@ -5,14 +5,22 @@ title: Whatever the Camera Caught
 kicker: Photo Journal
 intro: A running, mostly-unedited record — the garden, the dog, the light through the kitchen window, and everything else worth pointing a camera at.
 
-# Backdrop for the collage. Put an image in uploads/ and name it here; leave it
-# blank for the built-in paper. background_fit can be:
-#   fitwidth  spans the full width at its true proportions, repeating downwards
-#             if the page gets taller. Best for a designed collage like this one.
-#   tile      repeats at actual size. Best for a seamless paper texture.
+# ── Backdrop ─────────────────────────────────────────────────────────────────
+# To change it: put a new image in uploads/ and put its filename below. Or keep
+# the same filename and just replace the file - then you needn't edit anything
+# here at all. Leave `background:` blank for the plain built-in paper.
+#
+# background_fit:
+#   tile      repeats at its real size, as many times as it takes to fill the
+#             page - on any screen. Right for a pattern or paper texture.
+#   fitwidth  one copy spanning the full width, repeating downwards. For a
+#             designed collage, so it isn't distorted.
 #   cover     stretches to fill, cropping whatever doesn't fit.
+#
+# photo-journal-background-collage.jpg is the earlier collage, still in uploads/
+# if you'd like to switch back to it (use fitwidth for that one).
 background: photo-journal-background.jpg
-background_fit: fitwidth
+background_fit: tile
 ---
 <!DOCTYPE html>
 <html lang="en">

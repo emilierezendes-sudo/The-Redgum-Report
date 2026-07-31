@@ -196,10 +196,6 @@ img { max-width: 100%; }
 
   .rr-archive-section { padding: 28px 18px !important; }
 
-  /* A wide designed backdrop can't repeat gracefully down a narrow phone
-     screen, so show it once at the top and let the paper tone fill below. */
-  .rr-journal-bg { background-repeat: no-repeat !important; }
-
   /* Two columns on a phone - still cramped, but captions stay legible.
      Tilt is reduced rather than removed so it keeps the handmade feel. */
   .rr-scrapbook { columns: 2 !important; column-gap: 8px !important; }
