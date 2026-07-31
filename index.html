@@ -178,8 +178,9 @@ footer_note: © 2026 The Redgum Report · Made with too much tea and one loud do
     </div>
     <div style="width: 56px; height: 3px; background: #345457; border-radius: 2px; margin-bottom: 36px;"></div>
     <div class="rr-grid-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
+      {%- comment -%} the list can also contain note blocks, which have no `file` {%- endcomment -%}
       {% assign featured = site.data.photos | where: 'featured', true %}
-      {% for p in featured limit: 4 %}
+      {% for p in featured limit: 4 %}{% if p.file %}
       <figure style="margin: 0; display: flex; flex-direction: column;">
         <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
           <img src="uploads/{{ p.file }}" alt="{{ p.caption }}" style="width: 100%; height: 100%; object-fit: cover;{% if p.position %} object-position: {{ p.position }};{% endif %} border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -187,7 +188,7 @@ footer_note: © 2026 The Redgum Report · Made with too much tea and one loud do
         </div>
         <figcaption style="font-size: 12px; margin-top: 8px; color: rgba(34,31,27,0.6);">{{ p.caption }}</figcaption>
       </figure>
-      {% endfor %}
+      {% endif %}{% endfor %}
     </div>
   </section>
 

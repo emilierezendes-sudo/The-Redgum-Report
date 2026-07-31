@@ -1,34 +1,47 @@
 # ─────────────────────────────────────────────────────────────────────────────
-# The photo journal. One entry per photo, in the order they appear.
+# The photo journal, laid out like a scrapbook page. Entries appear in this
+# order, packing together in columns.
 #
-# Used by BOTH the photo journal page and the home page, so each caption is
-# written once and the two pages can never disagree.
+# There are two kinds of entry.
 #
+# ── A PHOTO ──────────────────────────────────────────────────────────────────
 #   file      the filename in uploads/  (lowercase, ~1200px is plenty)
-#   caption   the words under the photo
-#   shape     what shape the photo is shown in:
-#               omit it   → upright rectangle (default)
-#               square    → square
-#               wide      → wide, and takes up two columns
-#             This crops the photo to fit, it doesn't squash it.
-#   featured  true = also appears in the row on the home page. The first four
-#             featured photos are used.
-#   position  optional framing if the crop cuts the wrong part, e.g. '50% 30%'
-#             (first number left/right, second up/down;
-#              0% = show the top, 50% = middle, 100% = show the bottom)
+#   caption   the handwritten note under it. Optional - leave it out for none.
+#   shape     leave this off and the whole photo is shown, uncropped, whatever
+#             shape it is. That's usually what you want on a scrapbook page.
+#             Add one of these only if you'd rather crop it to a set shape:
+#               square  → square
+#               wide    → wide letterbox
+#               tall    → upright rectangle
+#   position  only matters when `shape` is set, and only if the crop is cutting
+#             the wrong part: '50% 20%' keeps more of the top,
+#             '50% 80%' more of the bottom.
+#   featured  true = also appears in the row on the home page (first four used)
 #
-# To swap a month's photos: upload the new files to uploads/, then change the
-# `file` and `caption` lines below. Add or delete whole entries freely.
+# ── A NOTE ───────────────────────────────────────────────────────────────────
+#   note      the little heading, e.g. "This Month" or "Currently Reading"
+#   lines     a bulleted list underneath (optional)
+#   text      a paragraph or two instead of a list (optional)
+#
+# Notes sit in among the photos wherever you put them in this list. Move an
+# entry up or down to move it on the page.
 # ─────────────────────────────────────────────────────────────────────────────
 
 - file: photo-journal-1.webp
   caption: Bouncing down the mountain at sunset
-  shape: wide
   featured: true
 
 - file: photo-journal-2.webp
   caption: Corduroy in Yosemite
   featured: true
+
+# An example note block — edit it, move it, or delete the whole entry.
+- note: This Month
+  lines:
+    - Finished Gulliver's Travels, finally
+    - One week lost to pneumonia
+    - Coffee bar organised (not by me)
+    - Ice cream and fireworks on the 4th
 
 - file: photo-journal-3.webp
   caption: Flowers :)
@@ -40,10 +53,14 @@
 
 - file: photo-journal-5.webp
   caption: Grapevine lake, at sunset
-  shape: wide
 
 - file: photo-journal-6.webp
   caption: Me, on a walk
+
+- file: photo-journal-4.webp
+  caption: A wild rose, hanging on
+  shape: square
+  position: '50% 38%'
 
 - file: photo-journal-7.webp
   caption: O beautiful America
@@ -53,10 +70,3 @@
 
 - file: photo-journal-9.webp
   caption: Houston skyline
-
-# The wild rose. The original is a very tall, narrow photo, so shown as a square
-# it crops a lot off the top and bottom - position nudges the bloom into view.
-- file: photo-journal-4.webp
-  caption: A wild rose, hanging on
-  shape: square
-  position: '50% 38%'
