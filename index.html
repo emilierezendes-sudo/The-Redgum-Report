@@ -54,19 +54,11 @@ callout_button_href: book-review.html
 # The About section (wording in _includes/about.md)
 about_portrait: about-portrait.webp
 
-# The four photos previewed on the home page. These also appear on the photo
-# journal page — change the caption in both places if you want them to match.
+# The photos previewed here come from _data/photos.yml - the same list the photo
+# journal page uses, so a caption is only ever written once. Mark a photo with
+# `featured: true` there to include it; the first four featured ones are shown.
 photos_title: From the Photo Journal
 photos_link: See the full photo journal →
-photo_previews:
-  - file: photo-journal-2.webp
-    caption: Corduroy in Yosemite
-  - file: photo-journal-3.webp
-    caption: Flowers :)
-  - file: photo-journal-4.webp
-    caption: More flowers :)
-  - file: photo-journal-1.webp
-    caption: Bouncing down the mountain at sunset
 
 # The subscribe box (wording in _includes/subscribe.md)
 subscribe_placeholder: you@email.com
@@ -188,7 +180,8 @@ footer_note: © 2026 The Redgum Report · Made with too much tea and one loud do
     </div>
     <div style="width: 56px; height: 3px; background: #345457; border-radius: 2px; margin-bottom: 36px;"></div>
     <div class="rr-grid-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
-      {% for p in page.photo_previews %}
+      {% assign featured = site.data.photos | where: 'featured', true %}
+      {% for p in featured limit: 4 %}
       <figure style="margin: 0; display: flex; flex-direction: column;">
         <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
           <img src="uploads/{{ p.file }}" alt="{{ p.caption }}" style="width: 100%; height: 100%; object-fit: cover;{% if p.position %} object-position: {{ p.position }};{% endif %} border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">

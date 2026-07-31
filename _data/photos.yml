@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# The photo journal. One entry per photo, in the order they appear.
+#
+# Used by BOTH the photo journal page and the home page, so each caption is
+# written once and the two pages can never disagree.
+#
+#   file      the filename in uploads/  (lowercase, ~1200px is plenty)
+#   caption   the words under the photo
+#   wide      true = spans two columns as a wide photo. Leave it off for a
+#             normal upright photo. (Photo journal only.)
+#   featured  true = also appears in the row on the home page. The first four
+#             featured photos are used.
+#   position  optional framing if a photo is cropped badly, e.g. '50% 30%'
+#             (0% = show the top, 100% = show the bottom)
+#
+# To swap a month's photos: upload the new files to uploads/, then change the
+# `file` and `caption` lines below. Add or delete whole entries freely.
+# ─────────────────────────────────────────────────────────────────────────────
+
+- file: photo-journal-1.webp
+  caption: Bouncing down the mountain at sunset
+  wide: true
+  featured: true
+
+- file: photo-journal-2.webp
+  caption: Corduroy in Yosemite
+  featured: true
+
+- file: photo-journal-3.webp
+  caption: Flowers :)
+  featured: true
+
+- file: photo-journal-4.webp
+  caption: More flowers :)
+  featured: true
+
+- file: photo-journal-5.webp
+  caption: Grapevine lake, at sunset
+  wide: true
+
+- file: photo-journal-6.webp
+  caption: Me, on a walk
+
+- file: photo-journal-7.webp
+  caption: O beautiful America
+
+- file: photo-journal-8.webp
+  caption: Cailie and I, ain't she cute?!
+
+- file: photo-journal-9.webp
+  caption: Houston skyline
