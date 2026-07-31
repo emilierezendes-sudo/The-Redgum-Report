@@ -15,4 +15,5 @@ The real news, if I am being completely honest, is that my sister organized the 
 As we say goodbye to July (yes, it rhymes) and hello to August, I usually like to think over what I got to accomplish over the summer months and plan for fall. Personally, I have found this practice to be super helpful. It’s a great way to remind yourself of all the amazing things life can offer -- whether they are big, life-changing events, or small, everyday moments. 
 
 Until next time,
+
 Emilie 
