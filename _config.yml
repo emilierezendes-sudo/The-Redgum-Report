@@ -4,6 +4,12 @@
 title: The Redgum Report
 description: Family dispatches, book reviews, and photo journal from The Redgum Report.
 
+# The subscribe box that appears at the bottom of every page. Its wording is in
+# _includes/subscribe.md; these are the Buttondown account and the field labels.
+buttondown_user: TheRedgumReport
+subscribe_placeholder: you@email.com
+subscribe_button: Subscribe
+
 # Turn straight quotes and -- into proper typographic quotes and dashes
 markdown: kramdown
 kramdown:

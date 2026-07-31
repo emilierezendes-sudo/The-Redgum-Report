@@ -6,12 +6,16 @@
 #
 #   file      the filename in uploads/  (lowercase, ~1200px is plenty)
 #   caption   the words under the photo
-#   wide      true = spans two columns as a wide photo. Leave it off for a
-#             normal upright photo. (Photo journal only.)
+#   shape     what shape the photo is shown in:
+#               omit it   → upright rectangle (default)
+#               square    → square
+#               wide      → wide, and takes up two columns
+#             This crops the photo to fit, it doesn't squash it.
 #   featured  true = also appears in the row on the home page. The first four
 #             featured photos are used.
-#   position  optional framing if a photo is cropped badly, e.g. '50% 30%'
-#             (0% = show the top, 100% = show the bottom)
+#   position  optional framing if the crop cuts the wrong part, e.g. '50% 30%'
+#             (first number left/right, second up/down;
+#              0% = show the top, 50% = middle, 100% = show the bottom)
 #
 # To swap a month's photos: upload the new files to uploads/, then change the
 # `file` and `caption` lines below. Add or delete whole entries freely.
@@ -19,7 +23,7 @@
 
 - file: photo-journal-1.webp
   caption: Bouncing down the mountain at sunset
-  wide: true
+  shape: wide
   featured: true
 
 - file: photo-journal-2.webp
@@ -36,7 +40,7 @@
 
 - file: photo-journal-5.webp
   caption: Grapevine lake, at sunset
-  wide: true
+  shape: wide
 
 - file: photo-journal-6.webp
   caption: Me, on a walk
@@ -49,3 +53,10 @@
 
 - file: photo-journal-9.webp
   caption: Houston skyline
+
+# The wild rose. The original is a very tall, narrow photo, so shown as a square
+# it crops a lot off the top and bottom - position nudges the bloom into view.
+- file: photo-journal-4.webp
+  caption: A wild rose, hanging on
+  shape: square
+  position: '50% 38%'

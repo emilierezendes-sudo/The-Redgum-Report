@@ -60,13 +60,12 @@ intro: A running, mostly-unedited record — the garden, the dog, the light thro
   <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 32px 48px 100px;">
     <div class="rr-grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       {% for p in site.data.photos %}
-      {% if p.wide %}
-      <figure class="rr-span2" style="margin: 0; grid-column: span 2; display: flex; flex-direction: column;">
-        <div style="position: relative; width: 100%; aspect-ratio: 16/10;">
-      {% else %}
-      <figure style="margin: 0; display: flex; flex-direction: column;">
-        <div style="position: relative; width: 100%; aspect-ratio: 4/5;">
-      {% endif %}
+      {%- comment -%} shape: wide spans two columns; square is 1:1; anything else is upright {%- endcomment -%}
+      {% if p.shape == 'wide' %}{% assign ratio = '16/10' %}{% assign spans = true %}
+      {% elsif p.shape == 'square' %}{% assign ratio = '1/1' %}{% assign spans = false %}
+      {% else %}{% assign ratio = '4/5' %}{% assign spans = false %}{% endif %}
+      <figure {% if spans %}class="rr-span2" style="margin: 0; grid-column: span 2; display: flex; flex-direction: column;"{% else %}style="margin: 0; display: flex; flex-direction: column;"{% endif %}>
+        <div style="position: relative; width: 100%; aspect-ratio: {{ ratio }};">
           <img src="uploads/{{ p.file }}" alt="{{ p.caption }}" style="width: 100%; height: 100%; object-fit: cover;{% if p.position %} object-position: {{ p.position }};{% endif %} border-radius: 16px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="rr-photo-placeholder" style="display: none; position: absolute; inset: 0; border-radius: 16px;">Drop a photo</div>
         </div>
@@ -75,6 +74,8 @@ intro: A running, mostly-unedited record — the garden, the dog, the light thro
       {% endfor %}
     </div>
   </section>
+
+  {% include subscribe-box.html %}
 
   <footer class="rr-footer" style="border-top: 1px solid rgba(34,31,27,0.14); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
     <div style="font-size: 13px; color: rgba(34,31,27,0.6);">&copy; 2026 The Redgum Report &middot; Made with too much tea and one loud dog</div>

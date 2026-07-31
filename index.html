@@ -60,10 +60,8 @@ about_portrait: about-portrait.webp
 photos_title: From the Photo Journal
 photos_link: See the full photo journal →
 
-# The subscribe box (wording in _includes/subscribe.md)
-subscribe_placeholder: you@email.com
-subscribe_button: Subscribe
-buttondown_user: TheRedgumReport
+# The subscribe box appears on every page now. Its wording is in
+# _includes/subscribe.md, and the account name is in _config.yml.
 
 footer_note: © 2026 The Redgum Report · Made with too much tea and one loud dog
 ---
@@ -193,30 +191,7 @@ footer_note: © 2026 The Redgum Report · Made with too much tea and one loud do
     </div>
   </section>
 
-  <section class="rr-section" style="max-width: 1180px; margin: 0 auto 96px; padding: 0 48px;">
-    <div class="rr-cta" style="border-radius: 24px; padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; background-color: #EFE4C9">
-      <div class="rr-cta-copy">
-        {%- capture subscribe_copy -%}{%- include subscribe.md -%}{%- endcapture -%}
-        {{ subscribe_copy | markdownify }}
-      </div>
-      <!--
-        Buttondown embeddable form. The account name comes from
-        buttondown_user at the top of this file.
-      -->
-      <form
-        action="https://buttondown.com/api/emails/embed-subscribe/{{ page.buttondown_user }}"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/{{ page.buttondown_user }}', 'popupwindow')"
-        class="rr-form"
-        style="display: flex; gap: 10px; flex-wrap: wrap;"
-      >
-        <input type="email" name="email" placeholder="{{ page.subscribe_placeholder }}" class="rr-input" required style="min-width: 240px; padding: 13px 18px; border-radius: 999px; border: 1px solid rgba(34,31,27,0.2); background: #f7f0dd; font-family: 'Lora', serif; font-size: 14px; color: #221f1b;">
-        <input type="hidden" value="1" name="embed">
-        <button type="submit" style="padding: 13px 26px; border-radius: 999px; border: none; background: #345457; color: #f7f0dd; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; cursor: pointer;">{{ page.subscribe_button }}</button>
-      </form>
-    </div>
-  </section>
+  {% include subscribe-box.html %}
 
   <footer class="rr-footer" style="border-top: 1px solid rgba(34,31,27,0.14); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
     <div style="font-size: 13px; color: rgba(34,31,27,0.6);">{{ page.footer_note }}</div>
