@@ -1,17 +1,18 @@
 ---
 layout: newsletter
-title: The One Where the Fence Finally Falls Down
+title: The One Where I Got to Eat Ice Cream
 kicker: Newsletter · July 2026
-byline: Written on a Sunday, mostly true
-topics: [Family, Garden, Dispatch]
+byline: Written on an odd Friday
+topics: [America's 25th, Getting Sick, Looking Forwards]
 ---
 
-The back fence has been "leaning thoughtfully" since March, according to whoever last defended it to me, and this week it stopped thinking and just fell over. Not dramatically — more like it sat down. The dog investigated for eleven minutes, decided it was now a bridge, and has not respected the property line since.
+This month America celebrated her 250th birthday. On that auspicious day a friend of mine hiked 17 miles in the Grand Canyon, another summitted a 14er in Colorado, and my sister got to hold dingo puppies in Australia. And I – well, not to brag or anything, but I got to eat ice cream and watch fireworks with two of my favorite people in the world (my parents, duh). I think my deal was pretty sweet, especially since it was dairy free. 
 
-In better news, the tomatoes did not fall over, and are in fact showing off, which is the one area of the yard currently outperforming expectations. We've eaten approximately four salads' worth straight off the vine while "checking on them," which I've decided doesn't count as harvesting.
+In other news, this month I also had the privilege of killing off my entire internal microbiome with antibiotics and of exploring the inside of an ER office for the first time. I spent an exciting week watching movies…most of which I cannot remember, since my brain was fried with the fever. Big surprise, getting pneumonia might actually be bad for you!
 
-> "We are not fixing the fence this weekend," I said, with the confidence of someone who has never once fixed a fence.
+The real news, if I am being completely honest, is that my sister organized the coffee bar. What was before a leaning tower of precariously stacked mugs of various sizes, shapes, and levels of cleanliness, is now a spotless countertop with a mug stand. Those who know me know that I am a tidy person by nature, so seeing my sister step into that role was really cool. 
 
-The bigger news, if I'm honest, is that everyone made it home for a proper Sunday dinner for the first time in what felt like months — same table, same too-many-side-dishes, same argument about whether the dog is allowed a seat (he is not; he sat anyway). It's the kind of ordinary evening I used to not think twice about, and now write a whole newsletter around.
+As we say goodbye to July (yes, it rhymes) and hello to August, I usually like to think over what I got to accomplish over the summer months and plan for fall. Personally, I have found this practice to be super helpful. It’s a great way to remind yourself of all the amazing things life can offer -- whether they are big, life-changing events, or small, everyday moments. 
 
-Fence repair is now scheduled for "next weekend," which is Redgum Report shorthand for sometime this autumn. I'll keep you posted. In the meantime: go check on your own tomatoes.
+Until next time,
+Emilie 
