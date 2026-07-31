@@ -14,7 +14,8 @@ for you. That's the one you'll edit most, and it's the easiest.
 | `_includes/hero.md` | **The big headline** on the home page and the line under it. |
 | `_includes/about.md` | **The About wording** shown on the home page. |
 | `_includes/feature-callout.md` | **The teal band** partway down the home page. |
-| `_includes/subscribe.md` | **The "Get the next dispatch" box.** |
+| `_includes/subscribe.md` | **The "Get the next dispatch" box** — appears on every page. |
+| `_data/photos.yml` | **The photo journal list** — used by both the journal page and the home page. |
 | `index.html` | Home page (hero, About, photo previews, subscribe form) — still HTML |
 | `photo-journal.html` | Full photo grid — still HTML |
 | `book-review-archive.html` | Just a title; the content comes from `_authors/` |
@@ -98,6 +99,44 @@ Some things you can do from that block:
 
 One quirk of the headline: `<br>` in `hero.md` is what splits it across two
 lines. Keep it, move it, or delete it for a single line.
+
+## The photo journal
+
+One file: **`_data/photos.yml`**. Both the photo journal page and the home
+page's preview row read from it, so each caption is written **once**.
+
+```yaml
+- file: photo-journal-4.jpg
+  caption: Feeding the ducks
+  shape: wide         # wide | square | leave it off for upright
+  featured: true      # also show it on the home page
+  position: '50% 38%' # optional, only if the crop cuts the wrong part
+```
+
+To swap a month's photos: upload the new images to `uploads/` (Add file →
+Upload files), then change the `file` and `caption` lines. Add or delete whole
+entries freely — both pages follow.
+
+**`shape`** decides what shape the photo is shown in. It crops to fit, it
+doesn't squash:
+
+- leave it off — upright rectangle, the usual one
+- `shape: square` — square
+- `shape: wide` — wide, and takes up two columns
+
+**`position`** fixes a bad crop. First number is left/right, second is up/down;
+`0%` shows the top, `50%` the middle, `100%` the bottom. So `'50% 20%'` keeps
+more of the top of the photo. Only add it if a photo looks wrong.
+
+**`featured: true`** puts a photo in the row on the home page — the first four
+featured ones are used, in list order.
+
+## The subscribe box
+
+The "Get the next dispatch" box sits at the bottom of every page, built from one
+shared file. Change its wording in **`_includes/subscribe.md`** and it updates
+everywhere at once. The Buttondown account name and the button/placeholder text
+are in `_config.yml`.
 
 ## The About section
 
