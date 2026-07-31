@@ -4,6 +4,12 @@
 title: Whatever the Camera Caught
 kicker: Photo Journal
 intro: A running, mostly-unedited record — the garden, the dog, the light through the kitchen window, and everything else worth pointing a camera at.
+
+# Optional backdrop for the collage. Put an image in uploads/ and name it here,
+# e.g. background: journal-paper.jpg — leave it blank for the built-in paper.
+# background_fit: cover stretches it to fill; tile repeats it at actual size.
+background:
+background_fit: cover
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -57,41 +63,42 @@ intro: A running, mostly-unedited record — the garden, the dog, the light thro
     <p style="font-size: 17px; line-height: 1.7; max-width: 560px; color: rgba(34,31,27,0.75); margin: 0;">{{ page.intro }}</p>
   </header>
 
-  <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 32px 48px 60px;">
-    <div class="rr-scrapbook">
-      {% for item in site.data.photos %}
+  <section class="rr-section" style="max-width: 1180px; margin: 0 auto; padding: 24px 48px 60px;">
+    {%- comment -%}
+      `background:` in the front matter above swaps the built-in paper backdrop
+      for an image of your own from uploads/.
+    {%- endcomment -%}
+    <div class="rr-journal-bg"{% if page.background %} style="background-color: transparent; background-image: url('uploads/{{ page.background }}'); background-size: {% if page.background_fit == 'tile' %}auto{% else %}cover{% endif %}; background-position: center;"{% endif %}>
+      <div class="rr-scrapbook">
+        {% for item in site.data.photos %}
 
-        {%- comment -%} A note block: has `note:` instead of `file:` {%- endcomment -%}
-        {% if item.note %}
-        <div class="rr-sb-note">
-          <h3>{{ item.note }}</h3>
-          {% if item.lines %}
-          <ul>
-            {% for line in item.lines %}<li>{{ line }}</li>{% endfor %}
-          </ul>
-          {% endif %}
-          {% if item.text %}{{ item.text | markdownify }}{% endif %}
-        </div>
-
-        {%- comment -%} A photo. With no `shape:` it's shown whole, uncropped. {%- endcomment -%}
-        {% else %}
-        {% if item.shape == 'wide' %}{% assign ratio = '16 / 10' %}
-        {% elsif item.shape == 'square' %}{% assign ratio = '1 / 1' %}
-        {% elsif item.shape == 'tall' %}{% assign ratio = '4 / 5' %}
-        {% else %}{% assign ratio = nil %}{% endif %}
-        <figure class="rr-sb-item" style="margin: 0;">
-          {% if ratio %}
-          <div class="rr-sb-crop" style="aspect-ratio: {{ ratio }};">
-            <img src="uploads/{{ item.file }}" alt="{{ item.caption }}" style="{% if item.position %}object-position: {{ item.position }};{% endif %} border-radius: 8px; filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.closest('figure').style.display='none';">
+          {%- comment -%} A note block: has `note:` instead of `file:` {%- endcomment -%}
+          {% if item.note %}
+          <div class="rr-sb-note">
+            <h3>{{ item.note }}</h3>
+            {% if item.lines %}
+            <ul>
+              {% for line in item.lines %}<li>{{ line }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+            {% if item.text %}{{ item.text | markdownify }}{% endif %}
           </div>
-          {% else %}
-          <img src="uploads/{{ item.file }}" alt="{{ item.caption }}" style="filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.closest('figure').style.display='none';">
-          {% endif %}
-          {% if item.caption %}<figcaption class="rr-sb-caption">{{ item.caption }}</figcaption>{% endif %}
-        </figure>
-        {% endif %}
 
-      {% endfor %}
+          {%- comment -%} A polaroid. Square unless `shape:` says otherwise. {%- endcomment -%}
+          {% else %}
+          {% if item.shape == 'wide' %}{% assign ratio = '4 / 3' %}
+          {% elsif item.shape == 'tall' %}{% assign ratio = '4 / 5' %}
+          {% else %}{% assign ratio = '1 / 1' %}{% endif %}
+          <figure class="rr-polaroid" style="margin: 0;">
+            <div class="rr-sb-crop" style="aspect-ratio: {{ ratio }};">
+              <img src="uploads/{{ item.file }}" alt="{{ item.caption }}" style="{% if item.position %}object-position: {{ item.position }};{% endif %} filter: sepia(0.18) saturate(0.85) contrast(1.03);" onerror="this.closest('figure').style.display='none';">
+            </div>
+            <figcaption>{{ item.caption }}</figcaption>
+          </figure>
+          {% endif %}
+
+        {% endfor %}
+      </div>
     </div>
   </section>
 

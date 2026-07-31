@@ -5,49 +5,68 @@
 img { max-width: 100%; }
 
 /* ---------- Scrapbook layout for the photo journal ----------
-   A masonry flow rather than a grid: items keep their own height and pack
-   together, so photos are shown whole instead of cropped to fit a slot. */
-.rr-scrapbook { columns: 3; column-gap: 16px; }
+   Deliberately dense: lots of small polaroids packed into narrow columns with
+   handwritten notes wedged in between, sitting on a paper backdrop. */
+
+/* The backdrop the whole collage sits on. A page can override the image via
+   an inline background-image; this is the built-in paper look. */
+.rr-journal-bg {
+  background-color: #e9dcbd;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.45) 0, transparent 42%),
+    radial-gradient(circle at 88% 72%, rgba(193,101,47,.07) 0, transparent 38%),
+    radial-gradient(circle at 55% 95%, rgba(52,84,87,.06) 0, transparent 40%);
+  border-radius: 16px;
+  padding: 26px 20px 14px;
+  box-shadow: inset 0 0 40px rgba(34,31,27,.06);
+}
+
+.rr-scrapbook { columns: 5; column-gap: 12px; }
 .rr-scrapbook > * {
   break-inside: avoid; -webkit-column-break-inside: avoid;
-  margin: 0 0 16px; display: block;
+  margin: 0 0 12px; display: block;
 }
-.rr-sb-item img { width: 100%; height: auto; display: block; border-radius: 8px; }
-/* a cropped item (shape: square / wide / tall) needs a fixed box */
-.rr-sb-item .rr-sb-crop { position: relative; width: 100%; }
-.rr-sb-item .rr-sb-crop img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.rr-sb-caption {
+/* ── Polaroids ── white frame, thicker at the bottom, caption written in it ── */
+.rr-polaroid {
+  background: #fffdf6;
+  padding: 8px 8px 6px;
+  border-radius: 2px;
+  box-shadow: 0 3px 9px rgba(34,31,27,.22);
+}
+.rr-polaroid .rr-sb-crop { position: relative; width: 100%; aspect-ratio: 1 / 1; background: rgba(34,31,27,.06); }
+.rr-polaroid .rr-sb-crop img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.rr-polaroid figcaption {
   font-family: 'Caveat', 'Segoe Script', cursive;
-  font-size: 18px; line-height: 1.25; color: rgba(34,31,27,0.72);
-  margin: 5px 2px 0;
+  font-size: 15px; line-height: 1.15; color: rgba(34,31,27,.75);
+  text-align: center; margin: 7px 2px 4px; min-height: 2.1em;
 }
 
-/* A handwritten note block, sitting in the flow between photos */
+/* ── Notes ── little written blocks between the photos ── */
 .rr-sb-note {
-  background: #fffdf3; border: 1px solid rgba(34,31,27,0.13);
-  border-radius: 4px; padding: 14px 16px 16px;
-  box-shadow: 0 2px 6px rgba(34,31,27,0.07);
+  background: #fffdf3; border: 1px solid rgba(34,31,27,.13);
+  border-radius: 3px; padding: 11px 12px 12px;
+  box-shadow: 0 2px 7px rgba(34,31,27,.12);
   font-family: 'Caveat', 'Segoe Script', cursive;
 }
 .rr-sb-note h3 {
   font-family: 'Caveat', 'Segoe Script', cursive;
-  font-size: 24px; font-weight: 700; margin: 0 0 8px;
-  color: #345457; letter-spacing: 0.01em;
+  font-size: 20px; font-weight: 700; margin: 0 0 5px; color: #345457;
 }
 .rr-sb-note ul { list-style: none; margin: 0; padding: 0; }
 .rr-sb-note li {
-  font-size: 19px; line-height: 1.45; color: rgba(34,31,27,0.8);
-  padding-left: 14px; position: relative;
+  font-size: 16px; line-height: 1.35; color: rgba(34,31,27,.82);
+  padding-left: 12px; position: relative;
 }
 .rr-sb-note li::before { content: '·'; position: absolute; left: 2px; color: #c1652f; font-weight: 700; }
-.rr-sb-note p { font-size: 19px; line-height: 1.4; margin: 0 0 6px; color: rgba(34,31,27,0.8); }
+.rr-sb-note p { font-size: 16px; line-height: 1.32; margin: 0 0 5px; color: rgba(34,31,27,.82); }
 .rr-sb-note p:last-child { margin-bottom: 0; }
 
-/* Just enough tilt to feel taped in rather than laid out by a machine */
-.rr-scrapbook > *:nth-child(4n+1) { transform: rotate(-0.7deg); }
-.rr-scrapbook > *:nth-child(4n+3) { transform: rotate(0.8deg); }
-.rr-scrapbook > *:nth-child(7n+5) { transform: rotate(-1.1deg); }
+/* Enough tilt to look pinned up by hand rather than placed by a machine */
+.rr-scrapbook > *:nth-child(4n+1) { transform: rotate(-1.4deg); }
+.rr-scrapbook > *:nth-child(4n+2) { transform: rotate(1deg); }
+.rr-scrapbook > *:nth-child(5n+3) { transform: rotate(-0.6deg); }
+.rr-scrapbook > *:nth-child(7n+4) { transform: rotate(1.8deg); }
 
 /* ---------- Prose written in Markdown ----------
    Pages built from a .md file produce plain <p>, <blockquote>, <h2>, <ul>…
@@ -129,8 +148,9 @@ img { max-width: 100%; }
   .rr-grid-4,
   .rr-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
 
-  /* Scrapbook narrows to two columns */
-  .rr-scrapbook { columns: 2 !important; column-gap: 12px !important; }
+  /* Scrapbook: fewer columns, but still dense */
+  .rr-scrapbook { columns: 3 !important; column-gap: 10px !important; }
+  .rr-journal-bg { padding: 18px 14px 8px !important; }
   /* Wide "span 2" feature photos stop spanning once the grid narrows */
   .rr-span2 { grid-column: auto !important; }
 
@@ -176,9 +196,17 @@ img { max-width: 100%; }
 
   .rr-archive-section { padding: 28px 18px !important; }
 
-  /* One column of photos on a phone, and drop the tilt so nothing pokes out */
-  .rr-scrapbook { columns: 1 !important; }
-  .rr-scrapbook > * { transform: none !important; }
+  /* Two columns on a phone - still cramped, but captions stay legible.
+     Tilt is reduced rather than removed so it keeps the handmade feel. */
+  .rr-scrapbook { columns: 2 !important; column-gap: 8px !important; }
+  .rr-scrapbook > *:nth-child(4n+1) { transform: rotate(-0.8deg) !important; }
+  .rr-scrapbook > *:nth-child(4n+2) { transform: rotate(0.6deg) !important; }
+  .rr-scrapbook > *:nth-child(5n+3) { transform: rotate(-0.4deg) !important; }
+  .rr-scrapbook > *:nth-child(7n+4) { transform: rotate(0.9deg) !important; }
+  .rr-polaroid { padding: 5px 5px 4px !important; }
+  .rr-polaroid figcaption { font-size: 13px !important; min-height: 2.2em !important; }
+  .rr-sb-note h3 { font-size: 17px !important; }
+  .rr-sb-note li, .rr-sb-note p { font-size: 14px !important; }
 
   /* Archive's 3-up thumbnail strips stay 3-up but tighten */
   .rr-thumbs { gap: 8px !important; }

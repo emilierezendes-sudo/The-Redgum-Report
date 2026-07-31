@@ -35,7 +35,8 @@
   caption: Corduroy in Yosemite
   featured: true
 
-# An example note block — edit it, move it, or delete the whole entry.
+# Example note blocks — edit them, move them, or delete the whole entry.
+# Short ones scattered about look better than one long one.
 - note: This Month
   lines:
     - Finished Gulliver's Travels, finally
@@ -54,6 +55,12 @@
 - file: photo-journal-5.webp
   caption: Grapevine lake, at sunset
 
+- note: Elsewhere
+  lines:
+    - Cailie held dingo puppies
+    - A friend hiked 17 miles of the Grand Canyon
+    - Another summitted a 14er
+
 - file: photo-journal-6.webp
   caption: Me, on a walk
 
@@ -64,6 +71,10 @@
 
 - file: photo-journal-7.webp
   caption: O beautiful America
+
+- note: Currently Reading
+  text: |
+    Gulliver's Travels — 22 years late, but getting there.
 
 - file: photo-journal-8.webp
   caption: Cailie and I, ain't she cute?!
