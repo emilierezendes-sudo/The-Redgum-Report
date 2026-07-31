@@ -6,7 +6,7 @@ byline: Written on an odd Friday
 topics: [America's 250th, Getting Sick, Looking Forwards]
 ---
 
-This month America celebrated her 250th birthday. On that auspicious day a friend of mine hiked 17 miles in the Grand Canyon, another summitted a 14er in Colorado, and my sister got to hold dingo puppies in Australia. And I – well, not to brag or anything, but I got to eat ice cream and watch fireworks with two of my favorite people in the world (my parents, duh). I think my deal was pretty sweet, especially since it was dairy free. 
+This month America celebrated her 250th birthday. On that auspicious day, a friend of mine hiked 17 miles in the Grand Canyon, another summitted a 14er in Colorado, and my sister got to hold dingo puppies in Australia. And I – well, not to brag or anything, but I got to eat ice cream and watch fireworks with two of my favorite people in the world (my parents, duh). I think my deal was pretty sweet, especially since it was dairy free. 
 
 In other news, this month I also had the privilege of killing off my entire internal microbiome with antibiotics and of exploring the inside of an ER office for the first time. I spent an exciting week watching movies…most of which I cannot remember, since my brain was fried with the fever. Big surprise, getting pneumonia might actually be bad for you!
 
