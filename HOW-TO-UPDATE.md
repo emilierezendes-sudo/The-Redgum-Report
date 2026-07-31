@@ -100,36 +100,50 @@ Some things you can do from that block:
 One quirk of the headline: `<br>` in `hero.md` is what splits it across two
 lines. Keep it, move it, or delete it for a single line.
 
-## The photo journal
+## The photo journal (scrapbook page)
 
-One file: **`_data/photos.yml`**. Both the photo journal page and the home
-page's preview row read from it, so each caption is written **once**.
+One file: **`_data/photos.yml`**. Photos pack together at their own sizes, like
+a journal spread, and you can tuck handwritten notes in among them. The home
+page's preview row reads the same list, so a caption is only written **once**.
+
+**A photo:**
 
 ```yaml
 - file: photo-journal-4.jpg
   caption: Feeding the ducks
-  shape: wide         # wide | square | leave it off for upright
   featured: true      # also show it on the home page
-  position: '50% 38%' # optional, only if the crop cuts the wrong part
 ```
+
+The photo is shown **whole** — no cropping. That's usually what you want here.
+Add `shape:` only if you'd rather crop it to a set shape:
+
+- `shape: square` — square
+- `shape: wide` — wide letterbox
+- `shape: tall` — upright rectangle
+
+If a crop cuts the wrong part, add `position: '50% 20%'` — first number is
+left/right, second up/down; `0%` shows the top, `100%` the bottom. It only does
+anything when `shape` is set.
+
+**A note:**
+
+```yaml
+- note: This Month
+  lines:
+    - Finished Gulliver's Travels, finally
+    - One week lost to pneumonia
+```
+
+Use `text:` instead of `lines:` if you'd rather write a paragraph. Notes appear
+wherever you put them in the list — move the entry up or down to move it on the
+page.
 
 To swap a month's photos: upload the new images to `uploads/` (Add file →
 Upload files), then change the `file` and `caption` lines. Add or delete whole
 entries freely — both pages follow.
 
-**`shape`** decides what shape the photo is shown in. It crops to fit, it
-doesn't squash:
-
-- leave it off — upright rectangle, the usual one
-- `shape: square` — square
-- `shape: wide` — wide, and takes up two columns
-
-**`position`** fixes a bad crop. First number is left/right, second is up/down;
-`0%` shows the top, `50%` the middle, `100%` the bottom. So `'50% 20%'` keeps
-more of the top of the photo. Only add it if a photo looks wrong.
-
 **`featured: true`** puts a photo in the row on the home page — the first four
-featured ones are used, in list order.
+featured ones are used, in list order. Notes are ignored there.
 
 ## The subscribe box
 
