@@ -6,7 +6,7 @@ description: Family dispatches, book reviews, and photo journal from The Redgum 
 
 # The line of text in the footer at the bottom of every page. Edit it here and
 # it changes on all of them at once. (You'll want to bump the year each January.)
-footer_note: © 2026 The Redgum Report · Made with too much tea and one loud dog
+footer_note: © 2026 The Redgum Report · Made with too much tea and quite a bit of chocolate
 
 # The subscribe box that appears at the bottom of every page. Its wording is in
 # _includes/subscribe.md; these are the Buttondown account and the field labels.
