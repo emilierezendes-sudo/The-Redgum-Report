@@ -30,8 +30,8 @@
   caption: Flowers :)
   featured: true
 
-- file: photo-journal-4.webp
-  caption: More flowers :)
+- file: photo-journal-4.jpg
+  caption: Feeding the ducks          # <- Claude guessed this one, change it
   featured: true
 
 - file: photo-journal-5.webp
