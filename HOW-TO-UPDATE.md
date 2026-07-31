@@ -145,6 +145,33 @@ entries freely — both pages follow.
 **`featured: true`** puts a photo in the row on the home page — the first four
 featured ones are used, in list order. Notes are ignored there.
 
+### Changing the background
+
+The collage sits on a background you control. Two ways to change it:
+
+1. **Easiest — replace the file.** Upload a new image to `uploads/` using the
+   same name, `photo-journal-background.jpg`. Nothing else to edit.
+2. **Or point at a different file.** Upload it under any name, then change the
+   `background:` line near the top of `photo-journal.html`.
+
+The `background_fit:` line on the next line decides how it's used:
+
+| Setting | What it does | Use it for |
+|---|---|---|
+| `tile` | Repeats at its real size, as many times as it takes, on any screen | A pattern or paper texture |
+| `fitwidth` | One copy across the full width, repeating downwards | A designed collage, so it isn't distorted |
+| `cover` | Stretches to fill, cropping the overflow | A photo you don't mind cropping |
+
+For a **tiling pattern**, 600 × 600 px is a good size — keep it under ~150 KB
+and low-contrast, since the polaroids and notes sit on top and need to stay
+readable. A pattern that repeats evenly (checks, grain, speckle, dots) tiles
+invisibly; anything with one big feature in the middle will look obviously
+repeated.
+
+Leave `background:` blank to fall back to the plain built-in paper.
+`photo-journal-background-collage.jpg` is the earlier collage, still in
+`uploads/` if you want it back — it needs `background_fit: fitwidth`.
+
 ## The subscribe box
 
 The "Get the next dispatch" box sits at the bottom of every page, built from one
